@@ -289,25 +289,6 @@
 </library>
 <library name="Testing">
 <packages>
-<package name="TO220V">
-<description>&lt;b&gt;TO 220 Vertical&lt;/b&gt; Package works with various parts including N-Channel MOSFET SparkFun SKU: COM-10213</description>
-<wire x1="-5.08" y1="2.032" x2="-5.08" y2="-0.381" width="0.2032" layer="21"/>
-<wire x1="5.08" y1="2.032" x2="5.08" y2="-0.381" width="0.2032" layer="21"/>
-<wire x1="5.08" y1="2.032" x2="-5.08" y2="2.032" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="2.032" x2="-5.08" y2="3.048" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="3.048" x2="5.08" y2="3.048" width="0.2032" layer="21"/>
-<wire x1="5.08" y1="3.048" x2="5.08" y2="2.032" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="-0.381" x2="-4.191" y2="-1.27" width="0.2032" layer="21" curve="92.798868"/>
-<wire x1="5.08" y1="-0.381" x2="4.191" y2="-1.27" width="0.2032" layer="21" curve="-92.798868"/>
-<wire x1="-4.191" y1="-1.27" x2="-3.81" y2="-1.27" width="0.2032" layer="21"/>
-<wire x1="4.191" y1="-1.27" x2="3.81" y2="-1.27" width="0.2032" layer="21"/>
-<pad name="1" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-2.794" y="3.429" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-3.302" y="-3.302" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-5.08" y1="2.032" x2="5.08" y2="3.048" layer="21"/>
-</package>
 <package name="FLYING_JALAPENO">
 <wire x1="14.605" y1="3.81" x2="15.875" y2="3.81" width="0.2032" layer="21"/>
 <wire x1="15.875" y1="3.81" x2="16.51" y2="3.175" width="0.2032" layer="21"/>
@@ -2023,6 +2004,25 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <text x="-0.8255" y="1.778" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-1.016" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
+<package name="TO220V">
+<description>&lt;b&gt;TO 220 Vertical&lt;/b&gt; Package works with various parts including N-Channel MOSFET SparkFun SKU: COM-10213</description>
+<wire x1="-5.08" y1="2.032" x2="-5.08" y2="-0.381" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="2.032" x2="5.08" y2="-0.381" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="2.032" x2="-5.08" y2="2.032" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="2.032" x2="-5.08" y2="3.048" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="3.048" x2="5.08" y2="3.048" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="3.048" x2="5.08" y2="2.032" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="-0.381" x2="-4.191" y2="-1.27" width="0.2032" layer="21" curve="92.798868"/>
+<wire x1="4.191" y1="-1.27" x2="5.08" y2="-0.381" width="0.2032" layer="21" curve="92.798868"/>
+<wire x1="-4.191" y1="-1.27" x2="-3.81" y2="-1.27" width="0.2032" layer="21"/>
+<wire x1="4.191" y1="-1.27" x2="3.81" y2="-1.27" width="0.2032" layer="21"/>
+<rectangle x1="-5.08" y1="2.032" x2="5.08" y2="3.048" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-2.794" y="3.429" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.302" y="-3.302" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="SparkFun-Connectors">
@@ -2820,7 +2820,9 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="RES-07863" x="22.733" y="35.941" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100" x="22.733" y="35.941" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="Q3" library="Testing" package="TO220V" value="P-Channel MOSFET" x="26.67" y="30.48" rot="MR270"/>
+<element name="Q3" library="SparkFun-DiscreteSemi" package="TO220V" value="P-Channel MOSFET" x="26.67" y="30.48" rot="MR270">
+<attribute name="PROD_ID" value="TRANS-13060" x="26.67" y="30.48" size="1.778" layer="28" rot="MR270" display="off"/>
+</element>
 <element name="C3" library="SparkFun-Capacitors" package="NIC_10X10.5_CAP" value="100uF" x="38.1" y="30.48" rot="R180">
 <attribute name="PROD_ID" value="CAP-08362" x="38.1" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100uF" x="38.1" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2837,7 +2839,9 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="RES-07863" x="22.606" y="23.241" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100" x="22.606" y="23.241" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="Q5" library="Testing" package="TO220V" value="P-Channel MOSFET" x="26.67" y="17.78" rot="MR270"/>
+<element name="Q5" library="SparkFun-DiscreteSemi" package="TO220V" value="P-Channel MOSFET" x="26.67" y="17.78" rot="MR270">
+<attribute name="PROD_ID" value="TRANS-13060" x="26.67" y="17.78" size="1.778" layer="28" rot="MR270" display="off"/>
+</element>
 <element name="C8" library="SparkFun-Capacitors" package="NIC_10X10.5_CAP" value="100uF" x="38.1" y="16.51" rot="R180">
 <attribute name="PROD_ID" value="CAP-08362" x="38.1" y="16.51" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100uF" x="38.1" y="16.51" size="1.778" layer="27" rot="R180" display="off"/>
