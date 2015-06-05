@@ -2808,7 +2808,7 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="RES-00824" x="44.704" y="20.701" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" value="10K" x="44.704" y="20.701" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="Q2" library="SparkFun-DiscreteSemi" package="SOT23-3" value="MMBT2222A" x="21.59" y="33.02" rot="R180">
+<element name="Q2" library="SparkFun-DiscreteSemi" package="SOT23-3" value="" x="21.59" y="33.02" rot="R180">
 <attribute name="PROD_ID" value="TRANS-08049" x="21.59" y="33.02" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="MMBT2222A" x="21.59" y="33.02" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
@@ -2827,7 +2827,7 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="CAP-08362" x="38.1" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100uF" x="38.1" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="Q4" library="SparkFun-DiscreteSemi" package="SOT23-3" value="MMBT2222A" x="21.59" y="20.32" rot="R180">
+<element name="Q4" library="SparkFun-DiscreteSemi" package="SOT23-3" value="" x="21.59" y="20.32" rot="R180">
 <attribute name="PROD_ID" value="TRANS-08049" x="21.59" y="20.32" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="MMBT2222A" x="21.59" y="20.32" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
@@ -2839,7 +2839,7 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="RES-07863" x="22.606" y="23.241" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="100" x="22.606" y="23.241" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="Q5" library="SparkFun-DiscreteSemi" package="TO220V" value="P-Channel MOSFET" x="26.67" y="17.78" rot="MR270">
+<element name="Q5" library="SparkFun-DiscreteSemi" package="TO220V" value="" x="26.67" y="17.78" rot="MR270">
 <attribute name="PROD_ID" value="TRANS-13060" x="26.67" y="17.78" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="C8" library="SparkFun-Capacitors" package="NIC_10X10.5_CAP" value="100uF" x="38.1" y="16.51" rot="R180">
@@ -2983,11 +2983,11 @@ design rules under a new name.</description>
 <element name="R25" library="SparkFun-Resistors" package="0603-RES" value="390" x="46.99" y="10.414" rot="R90">
 <attribute name="PROD_ID" value="RES-07864" x="46.99" y="10.414" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
 </element>
-<element name="R26" library="SparkFun-Resistors" package="0603-RES" value="22M ohm" x="49.53" y="10.414" rot="R90">
-<attribute name="PROD_ID" value="RES-00818" x="49.53" y="10.414" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
+<element name="R26" library="SparkFun-Resistors" package="0603-RES" value="22M" x="49.53" y="10.414" rot="R90">
+<attribute name="PROD_ID" value="RES-11132" x="49.53" y="10.414" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
 </element>
-<element name="R27" library="SparkFun-Resistors" package="0603-RES" value="22M ohm" x="52.07" y="10.414" rot="R90">
-<attribute name="PROD_ID" value="RES-00818" x="52.07" y="10.414" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
+<element name="R27" library="SparkFun-Resistors" package="0603-RES" value="22M" x="52.07" y="10.414" rot="R90">
+<attribute name="PROD_ID" value="RES-11132" x="52.07" y="10.414" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
 </element>
 <element name="JP4" library="Testing" package="FLYING_JALAPENO" value="FLYING_JALAPENO" x="16.51" y="3.81"/>
 <element name="LOGO1" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_FLAME_.5" value="SFE_LOGO_NAME_FLAME.5_INCH" x="63.918196875" y="-0.23859375" rot="MR45"/>
