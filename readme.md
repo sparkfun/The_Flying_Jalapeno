@@ -1,13 +1,21 @@
-SparkFun Electronics Quality Control PCB Panels
+The Flying Jalapeno
 =======
 
-This repo contains eagle files that are the "panelization" of many testbed PCB designs. They are essentially eagle board files that are 10" by 15". Much like how Batch PCB used to create a panel of multiple designs, we will collect testbed PCBs as they are needed and "add" them to the latest panel.
+This is a generic testbed board that will act as the "brain and usual hardware" for 99% of testbeds. We currently design a ton of testbeds using the pro mini, but this requires us to also put more circuitry on the testbed itself. Since we use basically the same extra stuff on every testbed, it makes sense to have a custom board that includes all of this.
 
-The latest panel lives in the root directory of this repo. 
+It will be strictly used in QC and production (a sub assembly). 
 
-Once a panel is ordered by the QC Manager (me, Pete Lewis), the file will be moved to the "ORDERED" folder. I will also add the Purchase Order number to the name of the file.
+The title "The Flying Jalapeno". I know I'm a dork, but hey, might as well name it something fun. And why not be in honor of the best AVC team name ever??
 
-When you have a new design you'd like to be ordered. Please pull this repo, add in your design to the latest panel file, then commit with a message stating what design you have added. If your design filled up the panel, please also add a note in your commit stating "PANEL FULL"
+The extra hardware necessary for most testbeds:
+
+-2 adjustable vregs with high-side switches
+-2 resistor groups used for pre-testing for shorts to GND
+-2 IOs setup for capsense (basically just 10M resistors for each "send" line)
+-Resistors in place for PASS/FAIL leds
+-Larger Vreg for VCC, to make more current available as needed
+-Universal connector (2/18 header) that will mate with future pogobeds. (The idea here is that most future pogobeds will be comprised of two things: (2) the FLying Jalapeno and (2) the custom pogopin hardware.
+-1x6 SMD FTDI RA header for easy programming and debug
 
 License Information
 -------------------
