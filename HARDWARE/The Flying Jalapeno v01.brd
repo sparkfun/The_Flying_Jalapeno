@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -163,22 +163,14 @@
 <text x="21.2725" y="49.679859375" size="1.27" layer="21" font="vector" ratio="15">POWER</text>
 <text x="72.346821875" y="17.838421875" size="1.27" layer="21" font="vector" ratio="15" rot="R180">STAT</text>
 <text x="72.019159375" y="10.1219" size="1.27" layer="21" font="vector" ratio="15" rot="R180">RESET</text>
-<rectangle x1="5.08" y1="-1.27" x2="10.16" y2="11.43" layer="21" rot="R90"/>
-<text x="13.0048" y="9.3726" size="1.27" layer="21" font="vector" ratio="15" rot="R180">Testbed #</text>
+<rectangle x1="-19.05" y1="-1.27" x2="-13.97" y2="11.43" layer="21" rot="R90"/>
+<text x="-11.1252" y="10.6426" size="1.27" layer="21" font="vector" ratio="15" rot="R180">Testbed #</text>
 <text x="48.641" y="40.005" size="1.778" layer="21" font="vector" ratio="15" rot="R180">The Flying Jalapeno</text>
 <text x="51.054" y="38.481" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">BLK</text>
 <text x="66.548" y="38.481" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">GRN</text>
 <text x="36.83" y="49.53" size="1.27" layer="16" font="vector" ratio="15" rot="MR0">V01</text>
 <rectangle x1="2.921" y1="41.275" x2="12.192" y2="49.53" layer="21"/>
 <text x="3.429" y="49.911" size="1.27" layer="21" font="vector" ratio="15">VOLTAGE</text>
-<text x="14.351" y="7.239" size="0.6096" layer="21" font="vector" ratio="15" rot="R270">GND</text>
-<text x="15.748" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">GND</text>
-<text x="18.542" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">V1</text>
-<text x="18.542" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">V1</text>
-<text x="21.209" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">V2</text>
-<text x="21.082" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">V2</text>
-<text x="23.368" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">RAW</text>
-<text x="23.368" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">VCC</text>
 <text x="19.558" y="25.527" size="0.6096" layer="21" font="vector" ratio="15">RAW</text>
 <text x="19.05" y="29.718" size="0.6096" layer="21" font="vector" ratio="15">VREG1</text>
 <text x="18.923" y="17.018" size="0.6096" layer="21" font="vector" ratio="15">VREG2</text>
@@ -196,42 +188,7 @@
 <text x="19.05" y="14.732" size="0.6096" layer="21" font="vector" ratio="15" rot="R90">V2</text>
 <text x="29.845" y="25.4" size="1.27" layer="21" font="vector" ratio="15" rot="R90">V1</text>
 <text x="29.972" y="19.558" size="1.27" layer="21" font="vector" ratio="15" rot="R90">V2</text>
-<text x="26.289" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">A0</text>
-<text x="26.162" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">A1</text>
-<text x="28.829" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">A2</text>
-<text x="28.702" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">A3</text>
-<text x="31.369" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">A4</text>
-<text x="31.242" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">A5</text>
 <text x="37.465" y="36.957" size="0.6096" layer="21" font="vector" ratio="15">(For Spicy Testbeds)</text>
-<text x="36.449" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D2</text>
-<text x="36.322" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">D3</text>
-<text x="38.862" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D4</text>
-<text x="38.608" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">PTF</text>
-<text x="41.402" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D5</text>
-<text x="41.021" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">FAIL</text>
-<text x="43.434" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">PASS</text>
-<text x="43.688" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">CS1</text>
-<text x="46.482" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D6</text>
-<text x="46.228" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">CS2</text>
-<text x="49.022" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D7</text>
-<text x="48.768" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">D10</text>
-<text x="48.387" y="0.889" size="0.6096" layer="21" font="vector" ratio="15">CON1</text>
-<text x="33.401" y="0.762" size="0.6096" layer="21" font="vector" ratio="15">TXO</text>
-<text x="33.782" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">D1</text>
-<text x="33.909" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D0</text>
-<text x="33.655" y="8.763" size="0.6096" layer="21" font="vector" ratio="15">RXI</text>
-<text x="51.689" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D8</text>
-<text x="51.308" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">D12</text>
-<text x="51.308" y="0.889" size="0.6096" layer="21" font="vector" ratio="15">PTW</text>
-<text x="54.229" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D9</text>
-<text x="54.102" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">A6</text>
-<text x="53.721" y="0.889" size="0.6096" layer="21" font="vector" ratio="15">PTR1</text>
-<text x="56.515" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D11</text>
-<text x="56.261" y="8.763" size="0.6096" layer="21" font="vector" ratio="15">CON2</text>
-<text x="56.642" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">A7</text>
-<text x="56.261" y="0.889" size="0.6096" layer="21" font="vector" ratio="15">PTR2</text>
-<text x="58.928" y="1.651" size="0.6096" layer="21" font="vector" ratio="15">PTP</text>
-<text x="59.055" y="8.001" size="0.6096" layer="21" font="vector" ratio="15">D13</text>
 <text x="29.21" y="-12.7" size="1.778" layer="51" font="vector">Pete Lewis</text>
 <text x="53.086" y="35.941" size="1.27" layer="21" font="vector" ratio="15">SERIAL COM</text>
 <rectangle x1="66.548" y1="42.291" x2="73.025" y2="46.736" layer="21"/>
@@ -382,42 +339,6 @@
 <wire x1="44.45" y1="1.905" x2="43.815" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="41.91" y1="1.905" x2="42.545" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="44.45" y1="3.175" x2="44.45" y2="1.905" width="0.2032" layer="21"/>
-<pad name="1" x="0" y="2.667" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
-<pad name="2" x="2.54" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="3" x="5.08" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="4" x="7.62" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="5" x="10.16" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="6" x="12.7" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="7" x="15.24" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="8" x="17.78" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="9" x="20.32" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="10" x="22.86" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="11" x="25.4" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="12" x="27.94" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="13" x="30.48" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="14" x="33.02" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="15" x="35.56" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="16" x="38.1" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="17" x="40.64" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="18" x="43.18" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
-<rectangle x1="14.986" y1="2.286" x2="15.494" y2="2.794" layer="51"/>
-<rectangle x1="12.446" y1="2.286" x2="12.954" y2="2.794" layer="51"/>
-<rectangle x1="9.906" y1="2.286" x2="10.414" y2="2.794" layer="51"/>
-<rectangle x1="7.366" y1="2.286" x2="7.874" y2="2.794" layer="51"/>
-<rectangle x1="4.826" y1="2.286" x2="5.334" y2="2.794" layer="51"/>
-<rectangle x1="2.286" y1="2.286" x2="2.794" y2="2.794" layer="51"/>
-<rectangle x1="-0.254" y1="2.286" x2="0.254" y2="2.794" layer="51"/>
-<rectangle x1="32.766" y1="2.286" x2="33.274" y2="2.794" layer="51"/>
-<rectangle x1="30.226" y1="2.286" x2="30.734" y2="2.794" layer="51"/>
-<rectangle x1="27.686" y1="2.286" x2="28.194" y2="2.794" layer="51"/>
-<rectangle x1="25.146" y1="2.286" x2="25.654" y2="2.794" layer="51"/>
-<rectangle x1="22.606" y1="2.286" x2="23.114" y2="2.794" layer="51"/>
-<rectangle x1="20.066" y1="2.286" x2="20.574" y2="2.794" layer="51"/>
-<rectangle x1="17.526" y1="2.286" x2="18.034" y2="2.794" layer="51"/>
-<rectangle x1="35.306" y1="2.286" x2="35.814" y2="2.794" layer="51"/>
-<rectangle x1="37.846" y1="2.286" x2="38.354" y2="2.794" layer="51"/>
-<rectangle x1="40.386" y1="2.286" x2="40.894" y2="2.794" layer="51"/>
-<rectangle x1="42.926" y1="2.286" x2="43.434" y2="2.794" layer="51"/>
 <wire x1="14.605" y1="1.27" x2="15.875" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="15.875" y1="1.27" x2="16.51" y2="0.635" width="0.2032" layer="21"/>
 <wire x1="16.51" y1="-0.635" x2="15.875" y2="-1.27" width="0.2032" layer="21"/>
@@ -528,24 +449,25 @@
 <wire x1="43.815" y1="-1.27" x2="42.545" y2="-1.27" width="0.2032" layer="21"/>
 <wire x1="41.91" y1="-0.635" x2="42.545" y2="-1.27" width="0.2032" layer="21"/>
 <wire x1="44.45" y1="0.635" x2="44.45" y2="-0.635" width="0.2032" layer="21"/>
-<pad name="19" x="0" y="0.127" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
-<pad name="20" x="2.54" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="21" x="5.08" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="22" x="7.62" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="23" x="10.16" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="24" x="12.7" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="25" x="15.24" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="26" x="17.78" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="27" x="20.32" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="28" x="22.86" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="29" x="25.4" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="30" x="27.94" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="31" x="30.48" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="32" x="33.02" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="33" x="35.56" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="34" x="38.1" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="35" x="40.64" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="36" x="43.18" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<wire x1="-0.635" y1="4.445" x2="0.635" y2="4.445" width="0.2032" layer="21"/>
+<rectangle x1="14.986" y1="2.286" x2="15.494" y2="2.794" layer="51"/>
+<rectangle x1="12.446" y1="2.286" x2="12.954" y2="2.794" layer="51"/>
+<rectangle x1="9.906" y1="2.286" x2="10.414" y2="2.794" layer="51"/>
+<rectangle x1="7.366" y1="2.286" x2="7.874" y2="2.794" layer="51"/>
+<rectangle x1="4.826" y1="2.286" x2="5.334" y2="2.794" layer="51"/>
+<rectangle x1="2.286" y1="2.286" x2="2.794" y2="2.794" layer="51"/>
+<rectangle x1="-0.254" y1="2.286" x2="0.254" y2="2.794" layer="51"/>
+<rectangle x1="32.766" y1="2.286" x2="33.274" y2="2.794" layer="51"/>
+<rectangle x1="30.226" y1="2.286" x2="30.734" y2="2.794" layer="51"/>
+<rectangle x1="27.686" y1="2.286" x2="28.194" y2="2.794" layer="51"/>
+<rectangle x1="25.146" y1="2.286" x2="25.654" y2="2.794" layer="51"/>
+<rectangle x1="22.606" y1="2.286" x2="23.114" y2="2.794" layer="51"/>
+<rectangle x1="20.066" y1="2.286" x2="20.574" y2="2.794" layer="51"/>
+<rectangle x1="17.526" y1="2.286" x2="18.034" y2="2.794" layer="51"/>
+<rectangle x1="35.306" y1="2.286" x2="35.814" y2="2.794" layer="51"/>
+<rectangle x1="37.846" y1="2.286" x2="38.354" y2="2.794" layer="51"/>
+<rectangle x1="40.386" y1="2.286" x2="40.894" y2="2.794" layer="51"/>
+<rectangle x1="42.926" y1="2.286" x2="43.434" y2="2.794" layer="51"/>
 <rectangle x1="14.986" y1="-0.254" x2="15.494" y2="0.254" layer="51"/>
 <rectangle x1="12.446" y1="-0.254" x2="12.954" y2="0.254" layer="51"/>
 <rectangle x1="9.906" y1="-0.254" x2="10.414" y2="0.254" layer="51"/>
@@ -564,7 +486,85 @@
 <rectangle x1="37.846" y1="-0.254" x2="38.354" y2="0.254" layer="51"/>
 <rectangle x1="40.386" y1="-0.254" x2="40.894" y2="0.254" layer="51"/>
 <rectangle x1="42.926" y1="-0.254" x2="43.434" y2="0.254" layer="51"/>
-<wire x1="-0.635" y1="4.445" x2="0.635" y2="4.445" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="2.667" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
+<pad name="2" x="2.54" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="3" x="5.08" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="4" x="7.62" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="5" x="10.16" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="6" x="12.7" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="7" x="15.24" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="8" x="17.78" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="9" x="20.32" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="10" x="22.86" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="11" x="25.4" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="12" x="27.94" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="13" x="30.48" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="14" x="33.02" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="15" x="35.56" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="16" x="38.1" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="17" x="40.64" y="2.667" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="18" x="43.18" y="2.413" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="19" x="0" y="0.127" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
+<pad name="20" x="2.54" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="21" x="5.08" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="22" x="7.62" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="23" x="10.16" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="24" x="12.7" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="25" x="15.24" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="26" x="17.78" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="27" x="20.32" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="28" x="22.86" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="29" x="25.4" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="30" x="27.94" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="31" x="30.48" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="32" x="33.02" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="33" x="35.56" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="34" x="38.1" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="35" x="40.64" y="0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="36" x="43.18" y="-0.127" drill="1.016" diameter="1.8796" rot="R90"/>
+<text x="-2.159" y="3.429" size="0.6096" layer="21" font="vector" ratio="15" rot="R270">GND</text>
+<text x="-0.762" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">GND</text>
+<text x="2.032" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">V1</text>
+<text x="2.032" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">V1</text>
+<text x="4.699" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">V2</text>
+<text x="4.572" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">V2</text>
+<text x="6.858" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">RAW</text>
+<text x="6.858" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">VCC</text>
+<text x="9.779" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">A0</text>
+<text x="9.652" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">A1</text>
+<text x="12.319" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">A2</text>
+<text x="12.192" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">A3</text>
+<text x="14.859" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">A4</text>
+<text x="14.732" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">A5</text>
+<text x="19.939" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D2</text>
+<text x="19.812" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">D3</text>
+<text x="22.352" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D4</text>
+<text x="22.098" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">PTF</text>
+<text x="24.892" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D5</text>
+<text x="24.511" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">FAIL</text>
+<text x="26.924" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">PASS</text>
+<text x="27.178" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">CS1</text>
+<text x="29.972" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D6</text>
+<text x="29.718" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">CS2</text>
+<text x="32.512" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D7</text>
+<text x="32.258" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">D10</text>
+<text x="31.877" y="-2.921" size="0.6096" layer="21" font="vector" ratio="15">CON1</text>
+<text x="16.891" y="-3.048" size="0.6096" layer="21" font="vector" ratio="15">TXO</text>
+<text x="17.272" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">D1</text>
+<text x="17.399" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D0</text>
+<text x="17.145" y="4.953" size="0.6096" layer="21" font="vector" ratio="15">RXI</text>
+<text x="35.179" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D8</text>
+<text x="34.798" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">D12</text>
+<text x="34.798" y="-2.921" size="0.6096" layer="21" font="vector" ratio="15">PTW</text>
+<text x="37.719" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D9</text>
+<text x="37.592" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">A6</text>
+<text x="37.211" y="-2.921" size="0.6096" layer="21" font="vector" ratio="15">PTR1</text>
+<text x="40.005" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D11</text>
+<text x="39.751" y="4.953" size="0.6096" layer="21" font="vector" ratio="15">CON2</text>
+<text x="40.132" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">A7</text>
+<text x="39.751" y="-2.921" size="0.6096" layer="21" font="vector" ratio="15">PTR2</text>
+<text x="42.418" y="-2.159" size="0.6096" layer="21" font="vector" ratio="15">PTP</text>
+<text x="42.545" y="4.191" size="0.6096" layer="21" font="vector" ratio="15">D13</text>
 </package>
 </packages>
 </library>
