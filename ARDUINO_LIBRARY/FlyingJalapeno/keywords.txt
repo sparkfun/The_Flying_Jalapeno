@@ -1,0 +1,5 @@
+FlyingJalapeno	KEYWORD1
+dash	KEYWORD2
+dot	KEYWORD2
+verify_voltage	KEYWORD2
+PT	KEYWORD2
