@@ -152,11 +152,6 @@
 </layers>
 <library>
 <packages>
-<package name="CREATIVE_COMMONS">
-<text x="-20.32" y="5.08" size="1.778" layer="51" font="vector">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
-<text x="0" y="2.54" size="1.778" layer="51" font="vector"> https://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="11.43" y="0" size="1.778" layer="51" font="vector">Designed by:</text>
-</package>
 <package name="OSHW-LOGO-L">
 <polygon width="0.15" layer="21">
 <vertex x="0.9209" y="-2.2231" curve="9.497479"/>
@@ -18861,7 +18856,7 @@ Standard 11x14 US Ledger frame</description>
 <gate name="G$2" symbol="DOCFIELD" x="330.2" y="0" addlevel="must"/>
 </gates>
 <devices>
-<device name="" package="CREATIVE_COMMONS">
+<device name="">
 <technologies>
 <technology name=""/>
 </technologies>
