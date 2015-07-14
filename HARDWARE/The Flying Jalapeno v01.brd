@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -25,20 +25,20 @@
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
-<layer number="21" name="tPlace" color="16" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
@@ -253,6 +253,77 @@
 <text x="59.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D29</text>
 <text x="63.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D51</text>
 <text x="65.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D53</text>
+<wire x1="58.928" y1="37.846" x2="58.928" y2="17.526" width="0.254" layer="22" style="shortdash"/>
+<wire x1="58.928" y1="17.526" x2="42.291" y2="17.526" width="0.254" layer="22" style="shortdash"/>
+<wire x1="42.291" y1="17.526" x2="42.291" y2="37.846" width="0.254" layer="22" style="shortdash"/>
+<wire x1="42.291" y1="37.846" x2="58.801" y2="37.846" width="0.254" layer="22" style="shortdash"/>
+<text x="57.404" y="35.687" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0">Optional I2C pullups</text>
+<text x="70.104" y="58.674" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">0.1uF</text>
+<text x="69.85" y="56.007" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">10K</text>
+<text x="65.405" y="55.118" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">10K</text>
+<text x="61.087" y="49.657" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="55.2196" y="49.403" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="59.9694" y="52.8574" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">10K</text>
+<text x="57.912" y="52.4002" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">BSS138</text>
+<text x="63.8556" y="52.5272" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">BSS138</text>
+<text x="62.7888" y="41.5036" size="0.8128" layer="21" font="vector" ratio="15" rot="R45">0.1uF</text>
+<text x="36.5506" y="37.4142" size="0.8128" layer="21" font="vector" ratio="15" rot="R135">0.1uF</text>
+<text x="39.1414" y="40.3098" size="0.8128" layer="21" font="vector" ratio="15" rot="R135">0.1uF</text>
+<text x="43.5102" y="27.9146" size="0.8128" layer="21" font="vector" ratio="15" rot="R225">0.1uF</text>
+<text x="60.4012" y="24.4094" size="0.8128" layer="21" font="vector" ratio="15" rot="R225">16MHz</text>
+<text x="42.164" y="38.1508" size="0.8128" layer="21" font="vector" ratio="15" rot="R45">MEGA2560</text>
+<text x="50.3428" y="19.2278" size="0.8128" layer="21" font="vector" ratio="15">390</text>
+<text x="21.844" y="12.5984" size="0.8128" layer="21" font="vector" ratio="15">390</text>
+<text x="21.844" y="11.1506" size="0.8128" layer="21" font="vector" ratio="15">390</text>
+<text x="21.844" y="9.6266" size="0.8128" layer="21" font="vector" ratio="15">390</text>
+<text x="21.844" y="8.128" size="0.8128" layer="21" font="vector" ratio="15">390</text>
+<text x="21.6916" y="15.2146" size="0.8128" layer="21" font="vector" ratio="15">22M</text>
+<text x="63.9064" y="9.8298" size="0.8128" layer="21" font="vector" ratio="15" rot="R45">22M</text>
+<text x="9.4488" y="13.7414" size="0.8128" layer="21" font="vector" ratio="15">100K</text>
+<text x="16.0528" y="13.4874" size="0.8128" layer="21" font="vector" ratio="15">100K</text>
+<text x="9.6774" y="12.1666" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="16.1544" y="11.938" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="14.3764" y="10.3378" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="5.5118" y="10.2616" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="4.3942" y="8.509" size="0.8128" layer="21" font="vector" ratio="15">0.1uF</text>
+<text x="14.4018" y="8.6868" size="0.8128" layer="21" font="vector" ratio="15">0.1uF</text>
+<text x="23.4696" y="28.321" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">100uF</text>
+<text x="11.7602" y="28.321" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">100uF</text>
+<text x="15.2146" y="33.4772" size="0.8128" layer="21" font="vector" ratio="15">P-MOSFET</text>
+<text x="3.429" y="33.4772" size="0.8128" layer="21" font="vector" ratio="15">P-MOSFET</text>
+<text x="1.6256" y="39.9542" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="13.8684" y="40.132" size="0.8128" layer="21" font="vector" ratio="15">10K</text>
+<text x="38.1" y="58.9788" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">10K</text>
+<text x="12.1666" y="40.7416" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">100</text>
+<text x="23.5458" y="41.0464" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">100</text>
+<text x="20.4978" y="46.7868" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">0.1uF</text>
+<text x="8.8646" y="46.5582" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">0.1uF</text>
+<text x="24.1046" y="45.9232" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">10uF</text>
+<text x="12.5984" y="46.5328" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">10uF</text>
+<text x="10.7188" y="49.8856" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">240</text>
+<text x="9.7028" y="55.8292" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">390</text>
+<text x="11.049" y="55.8292" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">715</text>
+<text x="26.3144" y="57.1754" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">715</text>
+<text x="22.7838" y="50.6476" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">240</text>
+<text x="21.7932" y="57.3024" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">470</text>
+<text x="24.765" y="57.15" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">470</text>
+<text x="23.2664" y="57.1754" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">390</text>
+<text x="23.876" y="58.5216" size="0.8128" layer="21" font="vector" ratio="15">100</text>
+<text x="16.9672" y="57.6326" size="0.8128" layer="21" font="vector" ratio="15">10uF</text>
+<text x="7.2136" y="57.0484" size="0.8128" layer="21" font="vector" ratio="15">MBRA140</text>
+<text x="1.4732" y="53.9496" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">10uF</text>
+<text x="2.3876" y="61.7728" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">PTC</text>
+<text x="44.9834" y="64.3636" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">10uF</text>
+<text x="37.0332" y="71.9582" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">10uF</text>
+<text x="34.4424" y="58.9534" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">100K</text>
+<text x="26.4414" y="66.04" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">390</text>
+<text x="36.4744" y="61.2394" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">LM1117</text>
+<text x="6.8326" y="46.609" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">LM1117</text>
+<text x="18.923" y="46.8376" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">LM1117</text>
+<text x="17.9324" y="37.2872" size="0.8128" layer="21" font="vector" ratio="15">npn</text>
+<text x="6.4008" y="37.1348" size="0.8128" layer="21" font="vector" ratio="15">npn</text>
+<text x="2.8702" y="34.7218" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">390</text>
+<text x="15.0114" y="34.7472" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">390</text>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -3112,7 +3183,7 @@ design rules under a new name.</description>
 <element name="R27" library="SparkFun-Resistors" package="0603-RES" value="22M" x="63.679603125" y="11.60960625" rot="R45">
 <attribute name="PROD_ID" value="RES-11132" x="63.679603125" y="11.60960625" size="1.778" layer="27" font="vector" ratio="15" rot="R45" display="off"/>
 </element>
-<element name="LOGO1" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_FLAME_.5" value="SFE_LOGO_NAME_FLAME.5_INCH" x="65.760475" y="26.48884375" rot="MR0"/>
+<element name="LOGO1" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_FLAME_.5" value="SFE_LOGO_NAME_FLAME.5_INCH" x="67.030475" y="40.45884375" rot="MR0"/>
 <element name="C17" library="SparkFun-Capacitors" package="0603-CAP" value="0.1uF" x="9.017" y="8.9916" rot="R180">
 <attribute name="PROD_ID" value="CAP-00810" x="9.017" y="8.9916" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="0.1uF" x="9.017" y="8.9916" size="1.778" layer="27" rot="R180" display="off"/>
@@ -3122,7 +3193,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" value="0.1uF" x="12.7254" y="9.0678" size="1.778" layer="27" display="off"/>
 </element>
 <element name="LOGO3" library="SparkFun-Aesthetics" package="SFE_LOGO_FLAME_.1" value="SFE_LOGO_FLAME.1_INCH" x="68.58" y="62.611"/>
-<element name="LOGO4" library="SparkFun-Aesthetics" package="OSHW-LOGO-L" value="OSHW-LOGOL" x="43.18" y="46.99" rot="MR0"/>
+<element name="LOGO4" library="SparkFun-Aesthetics" package="OSHW-LOGO-L" value="OSHW-LOGOL" x="44.45" y="59.69" rot="MR0"/>
 <element name="D5" library="SparkFun-DiscreteSemi" package="SMA-DIODE" value="MBRA140" x="9.525" y="59.563" rot="R180">
 <attribute name="PROD_ID" value="DIO-08053" x="9.525" y="59.563" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
 </element>
