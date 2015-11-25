@@ -1,6 +1,8 @@
 #include <FlyingJalapeno.h>
-
 FlyingJalapeno FJ(13);
+
+#include <CapacitiveSensor.h>
+CapacitiveSensor   cs_4_2 = CapacitiveSensor(4,2);
 
 void setup()
 {
@@ -11,6 +13,7 @@ void setup()
 
 void loop()
 {
+  long total1 =  cs_4_2.capacitiveSensor(30);
   FJ.dot(); FJ.dot(); FJ.dot();
 
   delay(10);
