@@ -12,6 +12,10 @@ FlyingJalapeno::FlyingJalapeno(int pin)
 {
 	pinMode(pin, OUTPUT);
 	_pin = pin;	
+	pinMode(LED_PT_PASS, OUTPUT);
+	pinMode(LED_PT_FAIL, OUTPUT);
+	pinMode(LED_PASS, OUTPUT);
+	pinMode(LED_FAIL, OUTPUT);
 	
 }
 
@@ -73,7 +77,7 @@ boolean FlyingJalapeno::verify_value(int input_value, int correct_val, float all
 	else return false;  
 }
 
-void FlyingJalapeno::setV1(boolean on, float voltage)
+void FlyingJalapeno::setV1(boolean power_on, float voltage)
 {
   // lines that control the vreg setting
   // these are connected to different reistors off the adj line on the vreg
@@ -82,12 +86,8 @@ void FlyingJalapeno::setV1(boolean on, float voltage)
   pinMode(33,INPUT);
   pinMode(35,INPUT);
 
-  // Ensure power on that line is off
-  // power control line is controlling the high side switch, post vreg for v1
-  pinMode(48,OUTPUT);
-  digitalWrite(48, LOW);
-  
-  if(on)
+
+  if(power_on == true)
   {
     if(voltage == 3.3)
     {
@@ -99,12 +99,17 @@ void FlyingJalapeno::setV1(boolean on, float voltage)
       pinMode(35,OUTPUT);
       digitalWrite(35,LOW);
     }
-
+	pinMode(48,OUTPUT);
     digitalWrite(48,HIGH); // turn on the high side switch
+  }
+  else if (power_on == false)
+  {
+	pinMode(48,OUTPUT);
+	digitalWrite(48,LOW); // turn OFF the high side switch
   }
 }
 
-void FlyingJalapeno::setV2(boolean on, float voltage)
+void FlyingJalapeno::setV2(boolean power_on, float voltage)
 {
   // lines that control the vreg setting
   // these are connected to different reistors off the adj line on the vreg
@@ -116,13 +121,8 @@ void FlyingJalapeno::setV2(boolean on, float voltage)
   pinMode(37,INPUT);
   pinMode(38,INPUT);
   pinMode(39,INPUT);
-
-  // Ensure power on that line is off
-  // power control line is controlling the high side switch, post vreg for v2
-  pinMode(49,OUTPUT);
-  digitalWrite(49, LOW);
   
-  if(on)
+  if(power_on)
   {
     if(voltage == 3.3)
     {
@@ -144,7 +144,12 @@ void FlyingJalapeno::setV2(boolean on, float voltage)
       pinMode(37,OUTPUT);
       digitalWrite(37,LOW);
     }
-
+	pinMode(49,OUTPUT);
     digitalWrite(49,HIGH); // turn on the high side switch
+  }
+  else
+  {
+	pinMode(49,OUTPUT);
+	digitalWrite(49,LOW); // turn OFF the high side switch
   }
 }

@@ -8,6 +8,10 @@
 
 #include "Arduino.h"
 
+#define LED_PT_PASS 43
+#define LED_PT_FAIL 42
+#define LED_PASS 41
+#define LED_FAIL 40
 
 class FlyingJalapeno
 {
