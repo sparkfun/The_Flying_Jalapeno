@@ -254,11 +254,6 @@
 <text x="59.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D29</text>
 <text x="63.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D51</text>
 <text x="65.8" y="1.9" size="0.6604" layer="22" font="vector" ratio="15" rot="MR90" align="center-left">D53</text>
-<wire x1="58.928" y1="37.846" x2="58.928" y2="17.526" width="0.254" layer="22" style="shortdash"/>
-<wire x1="58.928" y1="17.526" x2="42.291" y2="17.526" width="0.254" layer="22" style="shortdash"/>
-<wire x1="42.291" y1="17.526" x2="42.291" y2="37.846" width="0.254" layer="22" style="shortdash"/>
-<wire x1="42.291" y1="37.846" x2="58.801" y2="37.846" width="0.254" layer="22" style="shortdash"/>
-<text x="57.404" y="35.687" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0">Optional I2C pullups</text>
 <text x="70.104" y="58.674" size="0.8128" layer="21" font="vector" ratio="15" rot="R90">0.1uF</text>
 <text x="69.85" y="56.007" size="0.8128" layer="21" font="vector" ratio="15" rot="R180">10K</text>
 <text x="65.405" y="55.118" size="0.8128" layer="21" font="vector" ratio="15" rot="R270">10K</text>
