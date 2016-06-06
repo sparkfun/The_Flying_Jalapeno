@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -56,7 +56,7 @@
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="13" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="13" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -371,32 +371,6 @@
 <pad name="6" x="5.08" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
 <text x="-1.27" y="4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="1X06-SMD">
-<wire x1="7.62" y1="1.25" x2="-7.62" y2="1.25" width="0.127" layer="51"/>
-<wire x1="-7.62" y1="1.25" x2="-7.62" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-7.62" y1="-1.25" x2="-6.35" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-6.35" y1="-1.25" x2="-3.81" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-3.81" y1="-1.25" x2="-1.27" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="-1.27" y1="-1.25" x2="1.27" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="1.27" y1="-1.25" x2="3.81" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="3.81" y1="-1.25" x2="6.35" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="6.35" y1="-1.25" x2="7.62" y2="-1.25" width="0.127" layer="51"/>
-<wire x1="7.62" y1="-1.25" x2="7.62" y2="1.25" width="0.127" layer="51"/>
-<wire x1="6.35" y1="-1.25" x2="6.35" y2="-7.25" width="0.127" layer="51"/>
-<wire x1="3.81" y1="-1.25" x2="3.81" y2="-7.25" width="0.127" layer="51"/>
-<wire x1="1.27" y1="-1.25" x2="1.27" y2="-7.25" width="0.127" layer="51"/>
-<wire x1="-1.27" y1="-1.25" x2="-1.27" y2="-7.25" width="0.127" layer="51"/>
-<wire x1="-3.81" y1="-1.25" x2="-3.81" y2="-7.25" width="0.127" layer="51"/>
-<wire x1="-6.35" y1="-1.25" x2="-6.35" y2="-7.25" width="0.127" layer="51"/>
-<smd name="1" x="-6.35" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<smd name="2" x="-3.81" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<smd name="3" x="-1.27" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<smd name="4" x="1.27" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<smd name="5" x="3.81" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<smd name="6" x="6.35" y="5" dx="3" dy="1" layer="1" rot="R90"/>
-<hole x="-5.08" y="0" drill="1.4"/>
-<hole x="5.08" y="0" drill="1.4"/>
 </package>
 </packages>
 </library>
@@ -2047,6 +2021,43 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <rectangle x1="-0.1397" y1="6.3119" x2="0.1397" y2="8.7503" layer="51" rot="R90"/>
 <rectangle x1="4.4704" y1="9.4742" x2="4.7498" y2="11.9126" layer="51" rot="R180"/>
 </package>
+<package name="FTDI_DEVICE_RA_SMT">
+<description>Package for devices meant to mate to an FTDI connector.</description>
+<wire x1="7.62" y1="1.25" x2="-7.62" y2="1.25" width="0.127" layer="51"/>
+<wire x1="-7.62" y1="1.25" x2="-7.62" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="-7.62" y1="-1.25" x2="-6.35" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="-6.35" y1="-1.25" x2="-3.81" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="-3.81" y1="-1.25" x2="-1.27" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-1.25" x2="1.27" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="1.27" y1="-1.25" x2="3.81" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="3.81" y1="-1.25" x2="6.35" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="6.35" y1="-1.25" x2="7.62" y2="-1.25" width="0.127" layer="51"/>
+<wire x1="7.62" y1="-1.25" x2="7.62" y2="1.25" width="0.127" layer="51"/>
+<wire x1="6.35" y1="-1.25" x2="6.35" y2="-7.25" width="0.127" layer="51"/>
+<wire x1="3.81" y1="-1.25" x2="3.81" y2="-7.25" width="0.127" layer="51"/>
+<wire x1="1.27" y1="-1.25" x2="1.27" y2="-7.25" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-1.25" x2="-1.27" y2="-7.25" width="0.127" layer="51"/>
+<wire x1="-3.81" y1="-1.25" x2="-3.81" y2="-7.25" width="0.127" layer="51"/>
+<wire x1="-6.35" y1="-1.25" x2="-6.35" y2="-7.25" width="0.127" layer="51"/>
+<smd name="4" x="1.27" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="5" x="3.81" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="6" x="6.35" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="3" x="-1.27" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="2" x="-3.81" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="1" x="-6.35" y="5" dx="3" dy="1" layer="1" rot="R90"/>
+<text x="-1.905" y="1.905" size="0.8128" layer="25">&gt;NAME</text>
+<text x="-1.905" y="0.635" size="0.8128" layer="27">&gt;VALUE</text>
+<text x="-3.81" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">TXO</text>
+<text x="-1.27" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">RXI</text>
+<text x="1.27" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">VCC</text>
+<text x="-6.35" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">DTR</text>
+<text x="6.35" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">GND</text>
+<text x="3.81" y="-1.016" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="center-left">CTS</text>
+<text x="-7.366" y="-2.54" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="top-center">GRN</text>
+<text x="7.366" y="-2.54" size="0.8128" layer="51" font="vector" ratio="15" rot="R90" align="bottom-center">BLK</text>
+<hole x="-5.08" y="0" drill="1.4"/>
+<hole x="5.08" y="0" drill="1.4"/>
+</package>
 </packages>
 </library>
 <library name="SparkFun-PowerIC">
@@ -3519,7 +3530,9 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="IC-10040" x="51.171971875" y="33.918025" size="1.778" layer="27" rot="R45" display="off"/>
 </element>
 <element name="JP3" library="SparkFun" package="2X3" value="" x="70.9549" y="17.8054" rot="R90"/>
-<element name="JP2" library="SparkFun" package="1X06-SMD" value="FTDI" x="58.42" y="64.77" rot="R180"/>
+<element name="JP2" library="SparkFun-Connectors" package="FTDI_DEVICE_RA_SMT" value="FTDI" x="58.42" y="64.77" rot="R180">
+<attribute name="PROD_ID" value="CONN-08971" x="58.42" y="64.77" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 <element name="JP4" library="Testing" package="FLYING_JALAPENO_V2_F" value="2x30 RA FEMALE HEADER" x="36.83" y="0"/>
 <element name="STANDOFF2" library="SparkFun-Electromechanical" package="STAND-OFF-TIGHT" value="STAND-OFFTIGHT" x="69.85" y="11.43"/>
 <element name="STANDOFF3" library="SparkFun-Electromechanical" package="STAND-OFF-TIGHT" value="STAND-OFFTIGHT" x="69.85" y="68.58"/>
@@ -5643,20 +5656,20 @@ design rules under a new name.</description>
 <signal name="N$16">
 <contactref element="Q7" pad="2"/>
 <contactref element="R34" pad="1"/>
-<contactref element="JP2" pad="3"/>
+<contactref element="JP2" pad="2"/>
 <wire x1="58.5851" y1="54.6726" x2="57.2848" y2="54.6726" width="0.3048" layer="1"/>
 <wire x1="57.2848" y1="54.6726" x2="57.1467" y2="54.8107" width="0.3048" layer="1"/>
 <wire x1="58.5851" y1="54.6726" x2="58.547" y2="54.7107" width="0.254" layer="1"/>
 <wire x1="58.547" y1="54.7107" x2="58.547" y2="59.436" width="0.254" layer="1"/>
 <wire x1="58.547" y1="59.436" x2="58.928" y2="59.817" width="0.254" layer="1"/>
 <wire x1="58.928" y1="59.817" x2="59.643" y2="59.817" width="0.254" layer="1"/>
-<wire x1="59.643" y1="59.817" x2="59.69" y2="59.77" width="0.254" layer="1"/>
+<wire x1="59.643" y1="59.817" x2="62.23" y2="59.77" width="0.254" layer="1"/>
 </signal>
 <signal name="N$26">
 <contactref element="Q6" pad="2"/>
 <contactref element="R41" pad="1"/>
-<contactref element="JP2" pad="2"/>
-<wire x1="62.23" y1="59.77" x2="62.23" y2="55.4678" width="0.3048" layer="1"/>
+<contactref element="JP2" pad="3"/>
+<wire x1="59.69" y1="59.77" x2="62.23" y2="55.4678" width="0.3048" layer="1"/>
 <wire x1="62.23" y1="55.4678" x2="62.7347" y2="54.9631" width="0.3048" layer="1"/>
 <wire x1="62.7347" y1="54.9631" x2="64.6319" y2="54.9631" width="0.3048" layer="1"/>
 <wire x1="64.6319" y1="54.9631" x2="64.77" y2="54.825" width="0.3048" layer="1"/>
