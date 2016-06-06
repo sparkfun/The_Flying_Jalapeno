@@ -26512,17 +26512,14 @@ bracket</text>
 <part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF3" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
-<part name="R36" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
-<part name="GND38" library="SparkFun" deviceset="GND" device=""/>
 <part name="R37" library="SparkFun-Resistors" deviceset="100OHM-1/10W-1%(0603)" device="" value="100"/>
 <part name="R38" library="SparkFun-Resistors" deviceset="470OHM1/10W1%(0603)" device="" value="470"/>
-<part name="R39" library="SparkFun-Resistors" deviceset="100KOHM-1/10W-1%(0603)" device="" value="100k"/>
 <part name="C19" library="SparkFun-Capacitors" deviceset="0.1UF-25V(+80/-20%)(0603)" device="" value="0.1uF"/>
 <part name="C21" library="SparkFun-Capacitors" deviceset="0.1UF-25V(+80/-20%)(0603)" device="" value="0.1uF"/>
 <part name="C22" library="SparkFun-Capacitors" deviceset="0.1UF-25V(+80/-20%)(0603)" device="" value="0.1uF"/>
 <part name="D6" library="SparkFun-LED" deviceset="LED-RED" device="1206" value="RED"/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
-<part name="R33" library="SparkFun-Resistors" deviceset="390OHM1/10W1%(0603)" device="" value="390"/>
+<part name="R33" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="Q6" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS138" value="BSS138, 200mA/50V"/>
 <part name="P+1" library="SparkFun" deviceset="VCC" device="" value="FTDI_VCC"/>
 <part name="P+4" library="SparkFun" deviceset="VCC" device="" value="VCC"/>
@@ -26576,7 +26573,6 @@ bracket</text>
 <text x="200.66" y="269.24" size="3.81" layer="97">MICRO</text>
 <text x="354.33" y="11.43" size="2.54" layer="94">Pete Lewis</text>
 <text x="422.402" y="7.62" size="2.54" layer="94">v02</text>
-<text x="144.78" y="274.32" size="1.27" layer="97">RAW SPLIT</text>
 <text x="284.48" y="96.52" size="1.778" layer="97">ATMEGA2560V</text>
 <text x="457.2" y="246.38" size="3.81" layer="97">2x30 RA connector to testbeds</text>
 <text x="5.08" y="241.3" size="1.27" layer="97">INPUT VOLTAGE 7-16V
@@ -26759,13 +26755,10 @@ Varies depending on testbed</text>
 <instance part="STANDOFF2" gate="G$1" x="426.72" y="25.4"/>
 <instance part="STANDOFF3" gate="G$1" x="429.26" y="27.94"/>
 <instance part="STANDOFF4" gate="G$1" x="426.72" y="27.94"/>
-<instance part="R36" gate="G$1" x="149.86" y="246.38" rot="R90"/>
-<instance part="GND38" gate="1" x="149.86" y="236.22"/>
 <instance part="R37" gate="G$1" x="88.9" y="96.52" rot="R180"/>
 <instance part="R38" gate="G$1" x="83.82" y="109.22" rot="R90"/>
 <instance part="GND47" gate="1" x="22.86" y="22.86"/>
 <instance part="JP2" gate="G$1" x="15.24" y="35.56" rot="MR180"/>
-<instance part="R39" gate="G$1" x="149.86" y="261.62" rot="R90"/>
 <instance part="U1" gate="1" x="314.96" y="175.26" smashed="yes">
 <attribute name="NAME" x="284.48" y="255.27" size="1.778" layer="95"/>
 </instance>
@@ -26835,12 +26828,12 @@ Varies depending on testbed</text>
 <attribute name="NAME" x="533.67" y="162.8586" size="0.8128" layer="95"/>
 <attribute name="VALUE" x="541.17" y="161.458" size="0.8128" layer="96"/>
 </instance>
-<instance part="D6" gate="G$1" x="406.4" y="198.12" smashed="yes" rot="R90">
-<attribute name="NAME" x="406.654" y="192.278" size="1.778" layer="95"/>
-<attribute name="VALUE" x="411.226" y="201.803" size="1.778" layer="96" rot="R180"/>
+<instance part="D6" gate="G$1" x="127" y="261.62" smashed="yes" rot="R90">
+<attribute name="NAME" x="127.254" y="255.778" size="1.778" layer="95"/>
+<attribute name="VALUE" x="131.826" y="265.303" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND5" gate="1" x="414.02" y="193.04"/>
-<instance part="R33" gate="G$1" x="396.24" y="198.12"/>
+<instance part="GND5" gate="1" x="134.62" y="256.54"/>
+<instance part="R33" gate="G$1" x="116.84" y="261.62"/>
 <instance part="Q6" gate="G$1" x="45.72" y="38.1" smashed="yes" rot="R270">
 <attribute name="NAME" x="41.91" y="42.926" size="1.778" layer="95"/>
 <attribute name="VALUE" x="40.386" y="32.512" size="1.778" layer="96"/>
@@ -26999,11 +26992,6 @@ Varies depending on testbed</text>
 <wire x1="175.26" y1="119.38" x2="175.26" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R36" gate="G$1" pin="1"/>
-<pinref part="GND38" gate="1" pin="GND"/>
-<wire x1="149.86" y1="238.76" x2="149.86" y2="241.3" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <wire x1="20.32" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="27.94" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="30.48" x2="22.86" y2="30.48" width="0.1524" layer="91"/>
@@ -27083,9 +27071,9 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="414.02" y1="195.58" x2="414.02" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="259.08" x2="134.62" y2="261.62" width="0.1524" layer="91"/>
 <pinref part="D6" gate="G$1" pin="C"/>
-<wire x1="414.02" y1="198.12" x2="411.48" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="261.62" x2="132.08" y2="261.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="GND"/>
@@ -27156,6 +27144,9 @@ Varies depending on testbed</text>
 <wire x1="76.2" y1="259.08" x2="78.74" y2="259.08" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="259.08" x2="78.74" y2="261.62" width="0.1524" layer="91"/>
 <junction x="78.74" y="261.62"/>
+<pinref part="R33" gate="G$1" pin="1"/>
+<wire x1="109.22" y1="261.62" x2="111.76" y2="261.62" width="0.1524" layer="91"/>
+<junction x="109.22" y="261.62"/>
 </segment>
 <segment>
 <wire x1="279.4" y1="233.68" x2="276.86" y2="233.68" width="0.1524" layer="91"/>
@@ -27267,12 +27258,6 @@ Varies depending on testbed</text>
 <wire x1="119.38" y1="144.78" x2="119.38" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="147.32" x2="116.84" y2="147.32" width="0.1524" layer="91"/>
 <label x="116.84" y="147.32" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="149.86" y1="266.7" x2="149.86" y2="269.24" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="269.24" x2="147.32" y2="269.24" width="0.1524" layer="91"/>
-<label x="147.32" y="269.24" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="R39" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="JP4" gate="G$1" pin="RAW"/>
@@ -27717,15 +27702,6 @@ Varies depending on testbed</text>
 </segment>
 </net>
 <net name="A13/RAW_READ" class="0">
-<segment>
-<pinref part="R36" gate="G$1" pin="2"/>
-<wire x1="149.86" y1="251.46" x2="149.86" y2="254" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="254" x2="149.86" y2="256.54" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="254" x2="152.4" y2="254" width="0.1524" layer="91"/>
-<junction x="149.86" y="254"/>
-<label x="152.4" y="254" size="1.27" layer="95" xref="yes"/>
-<pinref part="R39" gate="G$1" pin="1"/>
-</segment>
 <segment>
 <wire x1="279.4" y1="160.02" x2="276.86" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="U1" gate="1" pin="PK5(ADC13/PCINT21)"/>
@@ -28234,18 +28210,6 @@ Varies depending on testbed</text>
 <label x="533.4" y="218.44" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="34/RAW_PASS_LED" class="0">
-<segment>
-<wire x1="350.52" y1="195.58" x2="368.3" y2="195.58" width="0.1524" layer="91"/>
-<pinref part="U1" gate="1" pin="(A11)PC3"/>
-<label x="370.84" y="195.58" size="1.27" layer="95" xref="yes"/>
-<wire x1="368.3" y1="195.58" x2="370.84" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="195.58" x2="368.3" y2="198.12" width="0.1524" layer="91"/>
-<junction x="368.3" y="195.58"/>
-<pinref part="R33" gate="G$1" pin="1"/>
-<wire x1="368.3" y1="198.12" x2="391.16" y2="198.12" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="PC5" class="0">
 <segment>
 <wire x1="350.52" y1="200.66" x2="353.06" y2="200.66" width="0.1524" layer="91"/>
@@ -28511,7 +28475,7 @@ Varies depending on testbed</text>
 <segment>
 <pinref part="D6" gate="G$1" pin="A"/>
 <pinref part="R33" gate="G$1" pin="2"/>
-<wire x1="401.32" y1="198.12" x2="403.86" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="261.62" x2="124.46" y2="261.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="D23" class="0">
