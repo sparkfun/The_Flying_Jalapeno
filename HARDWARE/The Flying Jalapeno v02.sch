@@ -970,22 +970,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="0.0635" y="-0.4445" size="0.254" layer="51" rot="R40">PASTE</text>
 <rectangle x1="-0.2794" y1="-1.016" x2="1.4224" y2="0.9906" layer="31"/>
 </package>
-<package name="PAD.02X.02">
-<smd name="P$1" x="0" y="0" dx="0.508" dy="0.508" layer="1"/>
-</package>
-<package name="PAD.03X.03">
-<smd name="P$1" x="0" y="0" dx="0.762" dy="0.762" layer="1" roundness="100" cream="no"/>
-</package>
-<package name="PAD.03X.05">
-<smd name="P$1" x="0" y="0" dx="1.27" dy="1.27" layer="1" roundness="100" cream="no"/>
-</package>
-<package name="PAD.03X.04">
-<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
-</package>
-<package name="TP_15TH">
-<pad name="P$1" x="0" y="0" drill="0.381" diameter="0.6096" stop="no"/>
-<circle x="0" y="0" radius="0.381" width="0" layer="30"/>
-</package>
 </packages>
 <symbols>
 <symbol name="PAD-JUMPER-2-NO">
@@ -1020,13 +1004,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <vertex x="1.524" y="-1.524"/>
 <vertex x="1.524" y="0.762"/>
 </polygon>
-</symbol>
-<symbol name="TEST-POINT">
-<wire x1="2.54" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="3.302" y1="0.762" x2="3.302" y2="-0.762" width="0.1524" layer="94" curve="180"/>
-<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;Name</text>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;Value</text>
-<pin name="1" x="0" y="0" visible="off" length="point" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1074,54 +1051,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TEST-POINT" prefix="TP">
-<description>Bare copper test points for troubleshooting or ICT</description>
-<gates>
-<gate name="G$1" symbol="TEST-POINT" x="0" y="0"/>
-</gates>
-<devices>
-<device name="2" package="PAD.02X.02">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="3" package="PAD.03X.03">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="3X5" package="PAD.03X.05">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="3X4" package="PAD.03X.04">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="TP_15TH_THRU" package="TP_15TH">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -26466,7 +26395,7 @@ bracket</text>
 <part name="GND9" library="SparkFun" deviceset="GND" device=""/>
 <part name="D1" library="SparkFun-LED" deviceset="LED-RED" device="1206" value="RED"/>
 <part name="GND10" library="SparkFun" deviceset="GND" device=""/>
-<part name="R5" library="SparkFun-Resistors" deviceset="390OHM1/10W1%(0603)" device="" value="390"/>
+<part name="R5" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="R7" library="SparkFun-Resistors" deviceset="390OHM1/10W1%(0603)" device="" value="390"/>
 <part name="C13" library="SparkFun-Capacitors" deviceset="0.1UF-25V(+80/-20%)(0603)" device="" value="0.1uF"/>
 <part name="C14" library="SparkFun-Capacitors" deviceset="10UF-16V-10%(TANT)" device="" value="10uF"/>
@@ -26479,7 +26408,7 @@ bracket</text>
 <part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="D4" library="SparkFun-LED" deviceset="LED-RED" device="1206" value="RED"/>
 <part name="GND31" library="SparkFun" deviceset="GND" device=""/>
-<part name="R20" library="SparkFun-Resistors" deviceset="390OHM1/10W1%(0603)" device="" value="390"/>
+<part name="R20" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="R21" library="SparkFun-Resistors" deviceset="715OHM1/10W1%(0603)" device="" value="715"/>
 <part name="SJ3" library="SparkFun-Passives" deviceset="JUMPER-PAD-3-2OF3_NC_BY_PASTE" device="" value=""/>
 <part name="SJ4" library="SparkFun-Passives" deviceset="JUMPER-PAD-3-2OF3_NC_BY_PASTE" device="" value=""/>
@@ -26540,7 +26469,6 @@ bracket</text>
 <part name="U6" library="SparkFun-PowerIC" deviceset="MIC5205" device="3.3V" value="3.3V MIC5205"/>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="P+12" library="SparkFun" deviceset="3.3V" device=""/>
-<part name="TP1" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 <part name="C12" library="SparkFun-Capacitors" deviceset="10UF-6.3V-20%(0603)(TANT)" device="&quot;" value="10uF"/>
 <part name="P+6" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
 <part name="P+8" library="SparkFun" deviceset="3.3V" device=""/>
@@ -26863,9 +26791,6 @@ Varies depending on testbed</text>
 </instance>
 <instance part="GND12" gate="1" x="127" y="35.56"/>
 <instance part="P+12" gate="G$1" x="172.72" y="55.88"/>
-<instance part="TP1" gate="G$1" x="177.8" y="50.8" smashed="yes">
-<attribute name="NAME" x="177.8" y="52.832" size="1.778" layer="95"/>
-</instance>
 <instance part="C12" gate="G$1" x="160.02" y="45.72"/>
 <instance part="P+6" gate="G$1" x="378.46" y="175.26"/>
 <instance part="P+8" gate="G$1" x="414.02" y="175.26"/>
@@ -28584,11 +28509,8 @@ Varies depending on testbed</text>
 <pinref part="U6" gate="G$1" pin="OUT"/>
 <pinref part="P+12" gate="G$1" pin="3.3V"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<pinref part="TP1" gate="G$1" pin="1"/>
-<wire x1="177.8" y1="50.8" x2="172.72" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="50.8" x2="167.64" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="55.88" x2="172.72" y2="50.8" width="0.1524" layer="91"/>
-<junction x="172.72" y="50.8"/>
 <pinref part="C12" gate="G$1" pin="+"/>
 </segment>
 <segment>
