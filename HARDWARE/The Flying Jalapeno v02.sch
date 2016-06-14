@@ -25937,7 +25937,9 @@ bracket</text>
 <connect gate="G$1" pin="V2" pad="3 33"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="PROD_ID" value="CONN-13106" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="MALE" package="FLYING_JALAPENO_V2_M">
