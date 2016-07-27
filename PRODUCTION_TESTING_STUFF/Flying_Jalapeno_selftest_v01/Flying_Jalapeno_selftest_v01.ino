@@ -27,10 +27,12 @@ CapacitiveSensor   cs_2 = CapacitiveSensor(31,46);
 
 int failures = 0;
 
-  int net1_control_pin = 21; // also known as SCL, and is routed to the PCA level converter on the FJ board.
-  int net1_pins[] = {3,5,7,9,11,13,15,17,19,23,25,50,52,A0,A6,A8,A10,A12}; // QTY 18
-  int net2_control_pin = 20; // also known as SDA, and is routed to the PCA level converter on the FJ board.
-  int net2_pins[] = {2,4,6,8,10,12,14,16,18,22,24,26,51,53,A1,A5,A7,A9,A11}; // QTY 19
+int net1_control_pin = 21; // also known as SCL, and is routed to the PCA level converter on the FJ board.
+int net1_pins[] = {3,5,7,9,11,13,15,17,19,23,25,50,52,A0,A6,A8,A10,A12}; // QTY 18
+int net2_control_pin = 20; // also known as SDA, and is routed to the PCA level converter on the FJ board.
+int net2_pins[] = {2,4,6,8,10,12,14,16,18,22,24,26,51,53,A1,A5,A7,A9,A11}; // QTY 19
+
+boolean test_part1_result = false;
 
 void setup()
 {
@@ -52,12 +54,14 @@ void loop()
     failures = 0; // reset
     IO_net_test();
     if(failures == 0) LED_lines_test();
+    if(failures == 0) test_part1_result = true;
+    else test_part1_result = false;
   }
   else if(total2 > 5000)
   {
     FJ.dot();
     analog_pins_test();
-    if(failures == 0) {pinMode(13, OUTPUT); digitalWrite(13,HIGH);}     
+    if((failures == 0) && (test_part1_result == true)) {pinMode(13, OUTPUT); digitalWrite(13,HIGH);}     
   } 
 }
 
