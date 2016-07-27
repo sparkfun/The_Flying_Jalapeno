@@ -166,6 +166,7 @@ void verify_led_lines(boolean one, boolean two, boolean three, boolean four)
 
 void analog_pins_test()
 {
+  int delay_time = 4000; // used to delay before taking a reading, 100 is sufficient, but used longer to read with a DMM.
   Serial.println("\n\r\n\r#### Analog Pins testing");
   Serial.println("\n\rRAW:");
   if(FJ.verify_voltage(A4, 689, 0.05, true) == false) failures++;
@@ -175,10 +176,10 @@ void analog_pins_test()
 
   Serial.println("\n\rV1 (3.3V/5V):");
   FJ.setV1(true, 3.3);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A3, 345, 0.05, true) == false) failures++;
   FJ.setV1(true, 5);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A3, 521, 0.05, true) == false) failures++;
   FJ.setV1(false, 3.3);
 
@@ -187,16 +188,16 @@ void analog_pins_test()
 
   Serial.println("\n\rV2 (3.3V, 3.7V, 4.2V, 5V):");
   FJ.setV2(true, 3.3);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A2, 345, 0.05, true) == false) failures++;
   FJ.setV2(true, 3.7);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A2, 393, 0.05, true) == false) failures++;
   FJ.setV2(true, 4.2);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A2, 448, 0.05, true) == false) failures++;
   FJ.setV2(true, 5);
-  delay(100);
+  delay(delay_time);
   if(FJ.verify_voltage(A2, 525, 0.05, true) == false) failures++;
   FJ.setV2(false, 5);
 

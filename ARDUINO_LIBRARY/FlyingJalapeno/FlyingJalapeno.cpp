@@ -106,6 +106,8 @@ void FlyingJalapeno::setV1(boolean power_on, float voltage)
   {
 	pinMode(48,OUTPUT);
 	digitalWrite(48,LOW); // turn OFF the high side switch
+	pinMode(33,OUTPUT); // default to 3.3V - even when the high side switch is turn off.
+    digitalWrite(33,LOW);
   }
 }
 
@@ -151,5 +153,7 @@ void FlyingJalapeno::setV2(boolean power_on, float voltage)
   {
 	pinMode(49,OUTPUT);
 	digitalWrite(49,LOW); // turn OFF the high side switch
+	pinMode(36,OUTPUT); // default to 3.3V - even when the high side switch is turn off.
+    digitalWrite(36,LOW);
   }
 }
