@@ -157,3 +157,18 @@ void FlyingJalapeno::setV2(boolean power_on, float voltage)
     digitalWrite(36,LOW);
   }
 }
+
+void FlyingJalapeno::PCA_enable(boolean enable)
+{
+  // PCA is enabled via PD4, which is not a standard arduino pin, so we will have to write this via register calls... hmmff!
+  if(enable)
+  {
+    DDRD = DDRD | B00010000; // only set PD4 as output
+    PORTD = PORTD | B00010000; // PD4 HIGH
+  }
+  else
+  {
+    PORTD = PORTD & ~(B00010000); // PD4 LOW
+  }
+  delay(100);
+}

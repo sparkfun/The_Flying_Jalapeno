@@ -5,3 +5,4 @@ verify_voltage	KEYWORD2
 PT	KEYWORD2
 setV1	KEYWORD2
 setV2	KEYWORD2
+PCA_enable	KEYWORD2

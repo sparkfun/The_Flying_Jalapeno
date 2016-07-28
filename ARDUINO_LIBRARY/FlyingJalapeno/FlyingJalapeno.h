@@ -22,6 +22,7 @@ class FlyingJalapeno
 	boolean PT(byte select);
 	void setV1(boolean on, float voltage);
 	void setV2(boolean on, float voltage);
+	void PCA_enable(boolean enable);
     void dot();
     void dash();
   private:
