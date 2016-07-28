@@ -52,8 +52,10 @@ void loop()
   {
     FJ.dot();
     failures = 0; // reset
-    IO_net_test();
+    PCA_enable(true); // needed to pass IO_net_test()
+    IO_net_test(true);
     if(failures == 0) LED_lines_test();
+    if(failures == 0) PCA_enable_test();
     if(failures == 0) test_part1_result = true;
     else test_part1_result = false;
   }
@@ -65,9 +67,9 @@ void loop()
   } 
 }
 
-void IO_net_test()
+void IO_net_test(boolean debug)
 {
-  Serial.println("\n\r\n\r#### IO net testing");
+  if(debug) Serial.println("\n\r\n\r#### IO net testing");
     
   // set all pins as inputs
   for(int i = 0; i < 18; i++) pinMode(net1_pins[i], INPUT_PULLUP);
@@ -76,16 +78,16 @@ void IO_net_test()
   pinMode(net1_control_pin, OUTPUT);
   digitalWrite(net1_control_pin, LOW);
   pinMode(net2_control_pin, INPUT_PULLUP);
-  Serial.print("\n\rnet1:LOW, net2:INPUT_PULLUP");
+  if(debug) Serial.print("\n\rnet1:LOW, net2:INPUT_PULLUP");
   delay(100);
-  verify_nets(0,1);
+  verify_nets(0,1, debug);
 
   pinMode(net2_control_pin, OUTPUT);
   digitalWrite(net2_control_pin, LOW);
   pinMode(net1_control_pin, INPUT_PULLUP);
-  Serial.print("\n\rnet1:INPUT_PULLUP, net2:LOW");
+  if(debug) Serial.print("\n\rnet1:INPUT_PULLUP, net2:LOW");
   delay(100);
-  verify_nets(1,0);
+  verify_nets(1,0, debug);
 
   // back to input pullup when done
   pinMode(net1_control_pin, INPUT); 
@@ -94,29 +96,29 @@ void IO_net_test()
   for(int i = 0; i < 19; i++) pinMode(net2_pins[i], INPUT);
 }
 
-void verify_nets(int net1, int net2)
+void verify_nets(int net1, int net2, boolean debug)
 {
   boolean reading = false;
   // Read all inputs
-  Serial.print("\n\rnet1_pins:");
+  if(debug) Serial.print("\n\rnet1_pins:");
   for(int i = 0; i < 18; i++)
   {
     reading = digitalRead(net1_pins[i]);
-    Serial.print(reading);
+    if(debug) Serial.print(reading);
     if(reading != net1) failures++;
   }  
-  Serial.print("\tfailures:");
-  Serial.print(failures);
+  if(debug) Serial.print("\tfailures:");
+  if(debug) Serial.print(failures);
   
-  Serial.print("\n\rnet2_pins:");
+  if(debug) Serial.print("\n\rnet2_pins:");
   for(int i = 0; i < 19; i++)
   {
     reading = digitalRead(net2_pins[i]);
-    Serial.print(reading);
+    if(debug) Serial.print(reading);
     if(reading != net2) failures++;
   }      
-  Serial.print("\tfailures:");
-  Serial.println(failures);
+  if(debug) Serial.print("\tfailures:");
+  if(debug) Serial.println(failures);
 }
 
 void LED_lines_test()
@@ -206,5 +208,41 @@ void analog_pins_test()
   
 }
 
+void PCA_enable_test()
+{
+  // enable PCA
+  // check SDA and SCL toggle properly
+  // disable PCA
+  // check that SDA and SCL do NOT toggle properly
 
+  PCA_enable(false);
+  IO_net_test(false); // no debug
+
+  if(failures == 0) // This means that the enable line is floating, because it will pass the IO_net_test() even if floating
+  {
+    failures++;
+    Serial.println("\n\r\n\r#### PCA_enable test FAILURE");
+  }
+  else if(failures > 0)
+  {
+    // This means we caused a failure by pulling the PCA enable line low, THIS IS GOOD, so set failures back to zero and move on.
+    failures = 0;
+    Serial.println("\n\r\n\r#### PCA_enable test PASS");
+  }
+}
+
+void PCA_enable(boolean enable)
+{
+  // PCA is enabled via PD4, which is not a standard arduino pin, so we will have to write this via register calls... hmmff!
+  if(enable)
+  {
+    DDRD = DDRD | B00010000; // only set PD4 as output
+    PORTD = PORTD | B00010000; // PD4 HIGH
+  }
+  else
+  {
+    PORTD = PORTD & ~(B00010000); // PD4 LOW
+  }
+  delay(100);
+}
 
