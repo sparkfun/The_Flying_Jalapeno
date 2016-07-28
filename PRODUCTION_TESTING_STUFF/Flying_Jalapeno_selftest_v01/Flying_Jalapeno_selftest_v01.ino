@@ -52,7 +52,7 @@ void loop()
   {
     FJ.dot();
     failures = 0; // reset
-    PCA_enable(true); // needed to pass IO_net_test()
+    FJ.PCA_enable(true); // needed to pass IO_net_test()
     IO_net_test(true);
     if(failures == 0) LED_lines_test();
     if(failures == 0) PCA_enable_test();
@@ -215,7 +215,7 @@ void PCA_enable_test()
   // disable PCA
   // check that SDA and SCL do NOT toggle properly
 
-  PCA_enable(false);
+  FJ.PCA_enable(false);
   IO_net_test(false); // no debug
 
   if(failures == 0) // This means that the enable line is floating, because it will pass the IO_net_test() even if floating
@@ -231,18 +231,4 @@ void PCA_enable_test()
   }
 }
 
-void PCA_enable(boolean enable)
-{
-  // PCA is enabled via PD4, which is not a standard arduino pin, so we will have to write this via register calls... hmmff!
-  if(enable)
-  {
-    DDRD = DDRD | B00010000; // only set PD4 as output
-    PORTD = PORTD | B00010000; // PD4 HIGH
-  }
-  else
-  {
-    PORTD = PORTD & ~(B00010000); // PD4 LOW
-  }
-  delay(100);
-}
 
