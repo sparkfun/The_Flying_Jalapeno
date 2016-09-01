@@ -168,7 +168,7 @@ void verify_led_lines(boolean one, boolean two, boolean three, boolean four)
 
 void analog_pins_test()
 {
-  int delay_time = 4000; // used to delay before taking a reading, 100 is sufficient, but used longer to read with a DMM.
+  int delay_time = 100; // used to delay before taking a reading, 100 is sufficient, but used longer to read with a DMM.
   Serial.println("\n\r\n\r#### Analog Pins testing");
   Serial.println("\n\rRAW:");
   if(FJ.verify_voltage(A4, 689, 0.05, true) == false) failures++;
