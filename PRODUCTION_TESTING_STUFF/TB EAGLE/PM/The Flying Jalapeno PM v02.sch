@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -224,10 +224,6 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </class>
 </classes>
 <parts>
-<part name="STANDOFF1" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
-<part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
-<part name="STANDOFF3" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
-<part name="STANDOFF4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF5" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF6" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF9" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
@@ -238,10 +234,6 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <plain>
 </plain>
 <instances>
-<instance part="STANDOFF1" gate="G$1" x="-22.86" y="7.62"/>
-<instance part="STANDOFF2" gate="G$1" x="-25.4" y="7.62"/>
-<instance part="STANDOFF3" gate="G$1" x="-22.86" y="10.16"/>
-<instance part="STANDOFF4" gate="G$1" x="-25.4" y="10.16"/>
 <instance part="STANDOFF5" gate="G$1" x="10.16" y="7.62"/>
 <instance part="STANDOFF6" gate="G$1" x="7.62" y="7.62"/>
 <instance part="STANDOFF9" gate="G$1" x="7.62" y="12.7"/>
