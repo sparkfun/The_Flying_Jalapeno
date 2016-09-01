@@ -51,6 +51,9 @@ void loop()
   if(total1 > 5000)
   {
     FJ.dot();
+    // In order to re-test, we need to ensure V1 and V2 are shut down
+    FJ.setV1(false, 5);
+    FJ.setV2(false, 5);
     failures = 0; // reset
     FJ.PCA_enable(true); // needed to pass IO_net_test()
     IO_net_test(true);
@@ -63,7 +66,15 @@ void loop()
   {
     FJ.dot();
     analog_pins_test();
-    if((failures == 0) && (test_part1_result == true)) {pinMode(13, OUTPUT); digitalWrite(13,HIGH);}     
+    if((failures == 0) && (test_part1_result == true)) 
+    {
+      pinMode(13, OUTPUT); 
+      digitalWrite(13,HIGH); // Indicate that all tests have passed.
+      // turn on the V1 and V2 LEDs for manual verification 
+      // (because the other tests could have still passed even with these incorrectly populated)
+      FJ.setV1(true, 5);
+      FJ.setV2(true, 5);
+    }
   } 
 }
 
