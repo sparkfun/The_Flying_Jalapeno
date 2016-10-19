@@ -38,6 +38,11 @@ void setup()
 {
   Serial.begin(9600);
   Serial.println("Flying Jalapeno selftest v01, for hardware v02");
+  //pinMode(A2, OUTPUT);
+  //digitalWrite(A2, LOW);
+  FJ.PT(1);
+  FJ.PT(2);
+  while(1);
 }
 
 void loop()
