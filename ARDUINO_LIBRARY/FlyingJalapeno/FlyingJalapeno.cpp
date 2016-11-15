@@ -19,6 +19,11 @@ FlyingJalapeno::FlyingJalapeno(int statLED)
   pinMode(LED_PASS, OUTPUT);
   pinMode(LED_FAIL, OUTPUT);
 
+  pinMode(PSU1_POWER_CONTROL, OUTPUT);
+  disableRegulator1();
+
+  pinMode(PSU2_POWER_CONTROL, OUTPUT);
+  disableRegulator2();
 }
 
 void FlyingJalapeno::dot()
@@ -93,69 +98,56 @@ boolean FlyingJalapeno::verify_value(int input_value, int correct_val, float all
   else return false;
 }
 
-//Setup the first power supply to the chosen voltage level
-//Set power_on to false to power down PSU
-void FlyingJalapeno::setV1(boolean power_on, float voltage)
+//Enable or disable regulator #1
+void FlyingJalapeno::enableRegulator1(void)
 {
+    digitalWrite(PSU1_POWER_CONTROL, HIGH); // turn on the high side switch
+}
 
-// These lines are connected to different reistors off the adj line
-// Pulling pins low enables the resistors
-// Turning pins to input disables the resistors
-#define PSU1_VOLTAGE_CONTROL_TO_3V3 33
-#define PSU1_VOLTAGE_CONTROL_TO_5V0 35
+void FlyingJalapeno::disableRegulator1(void)
+{
+    digitalWrite(PSU1_POWER_CONTROL, LOW); // turn off the high side switch
+}
 
-// Set this pin high to enable power supply
-#define PSU1_POWER_CONTROL 48
+//Enable or disable regulator #2
+void FlyingJalapeno::enableRegulator2(void)
+{
+    digitalWrite(PSU2_POWER_CONTROL, HIGH); // turn on the high side switch
+}
 
+void FlyingJalapeno::disableRegulator2(void)
+{
+    digitalWrite(PSU2_POWER_CONTROL, LOW); // turn off the high side switch
+}
+
+//Setup the first power supply to the chosen voltage level
+void FlyingJalapeno::setRegulatorVoltage1(float voltage)
+{
   digitalWrite(PSU1_VOLTAGE_CONTROL_TO_3V3, LOW);
   digitalWrite(PSU1_VOLTAGE_CONTROL_TO_5V0, LOW);
   pinMode(PSU1_VOLTAGE_CONTROL_TO_3V3, INPUT);
   pinMode(PSU1_VOLTAGE_CONTROL_TO_5V0, INPUT);
 
-  pinMode(PSU1_POWER_CONTROL, OUTPUT);
-  digitalWrite(PSU1_POWER_CONTROL, LOW); // turn OFF the high side switch by default
-
-  if (power_on == true)
+  if (voltage == 3.3)
   {
-    if (voltage == 3.3)
-    {
-      pinMode(PSU1_VOLTAGE_CONTROL_TO_3V3, OUTPUT);
-      digitalWrite(PSU1_VOLTAGE_CONTROL_TO_3V3, LOW);
-    }
-    else if (voltage == 5)
-    {
-      pinMode(PSU1_VOLTAGE_CONTROL_TO_5V0, OUTPUT);
-      digitalWrite(PSU1_VOLTAGE_CONTROL_TO_5V0, LOW);
-    }
-
-    digitalWrite(PSU1_POWER_CONTROL, HIGH); // turn on the high side switch
+    pinMode(PSU1_VOLTAGE_CONTROL_TO_3V3, OUTPUT);
+    digitalWrite(PSU1_VOLTAGE_CONTROL_TO_3V3, LOW);
   }
-  else if (power_on == false)
+  else if (voltage == 5)
   {
-    digitalWrite(PSU1_POWER_CONTROL, LOW); // turn OFF the high side switch
-
+    pinMode(PSU1_VOLTAGE_CONTROL_TO_5V0, OUTPUT);
+    digitalWrite(PSU1_VOLTAGE_CONTROL_TO_5V0, LOW);
+  }
+  else
+  {
     pinMode(PSU1_VOLTAGE_CONTROL_TO_3V3, OUTPUT); // default to 3.3V - even when the high side switch is turn off.
     digitalWrite(PSU1_VOLTAGE_CONTROL_TO_3V3, LOW);
   }
 }
 
 //Setup the second power supply to the chosen voltage level
-//Set power_on to false to power down PSU
-void FlyingJalapeno::setV2(boolean power_on, float voltage)
+void FlyingJalapeno::setRegulatorVoltage2(float voltage)
 {
-// These lines are connected to different reistors off the adj line
-// Pulling pins low enables the resistors
-// Turning pins to input disables the resistors
-#define PSU2_VOLTAGE_CONTROL_TO_3V3 36
-#define PSU2_VOLTAGE_CONTROL_TO_3V7 37
-#define PSU2_VOLTAGE_CONTROL_TO_4V2 38
-#define PSU2_VOLTAGE_CONTROL_TO_5V0 39
-
-// Set this pin high to enable power supply
-#define PSU2_POWER_CONTROL 49
-
-  // lines that control the vreg setting
-  // these are connected to different reistors off the adj line on the vreg
   digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V3, LOW);
   digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V7, LOW);
   digitalWrite(PSU2_VOLTAGE_CONTROL_TO_4V2, LOW);
@@ -165,41 +157,35 @@ void FlyingJalapeno::setV2(boolean power_on, float voltage)
   pinMode(PSU2_VOLTAGE_CONTROL_TO_4V2, INPUT);
   pinMode(PSU2_VOLTAGE_CONTROL_TO_5V0, INPUT);
 
-  if (power_on)
+  if (voltage == 3.3)
   {
-    if (voltage == 3.3)
-    {
-      pinMode(PSU2_VOLTAGE_CONTROL_TO_3V3, OUTPUT);
-      digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V3, LOW);
-    }
-    else if (voltage == 5)
-    {
-      pinMode(PSU2_VOLTAGE_CONTROL_TO_5V0, OUTPUT);
-      digitalWrite(PSU2_VOLTAGE_CONTROL_TO_5V0, LOW);
-    }
-    else if (voltage == 4.2)
-    {
-      pinMode(PSU2_VOLTAGE_CONTROL_TO_4V2, OUTPUT);
-      digitalWrite(PSU2_VOLTAGE_CONTROL_TO_4V2, LOW);
-    }
-    else if (voltage == 3.7)
-    {
-      pinMode(PSU2_VOLTAGE_CONTROL_TO_3V7, OUTPUT);
-      digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V7, LOW);
-    }
-    pinMode(PSU2_POWER_CONTROL, OUTPUT);
-    digitalWrite(PSU2_POWER_CONTROL, HIGH); // turn on the high side switch
+    pinMode(PSU2_VOLTAGE_CONTROL_TO_3V3, OUTPUT);
+    digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V3, LOW);
+  }
+  else if (voltage == 3.7)
+  {
+    pinMode(PSU2_VOLTAGE_CONTROL_TO_3V7, OUTPUT);
+    digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V7, LOW);
+  }
+  else if (voltage == 4.2)
+  {
+    pinMode(PSU2_VOLTAGE_CONTROL_TO_4V2, OUTPUT);
+    digitalWrite(PSU2_VOLTAGE_CONTROL_TO_4V2, LOW);
+  }
+  else if (voltage == 5)
+  {
+    pinMode(PSU2_VOLTAGE_CONTROL_TO_5V0, OUTPUT);
+    digitalWrite(PSU2_VOLTAGE_CONTROL_TO_5V0, LOW);
   }
   else
   {
-    pinMode(PSU2_POWER_CONTROL, OUTPUT);
-    digitalWrite(PSU2_POWER_CONTROL, LOW); // turn OFF the high side switch
-
-    pinMode(PSU2_VOLTAGE_CONTROL_TO_3V3, OUTPUT); // default to 3.3V - even when the high side switch is turn off.
+    pinMode(PSU2_VOLTAGE_CONTROL_TO_3V3, OUTPUT); // default to 3.3V
     digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V3, LOW);
   }
 }
 
+//Enable or disable the I2C buffer
+//If you're doing I2C you'll need to enable the buffer
 void FlyingJalapeno::enablePCA(void)
 {
   // PCA is enabled via PD4, which is not a standard arduino pin, so we will have to write this via register calls... hmmff!
@@ -212,8 +198,31 @@ void FlyingJalapeno::enablePCA(void)
 void FlyingJalapeno::disablePCA(void)
 {
   // PCA is enabled via PD4, which is not a standard arduino pin, so we will have to write this via register calls... hmmff!
-  
   PORTD = PORTD & ~(B00010000); // PD4 LOW - Disables the PCA
   
   delay(100);
+}
+
+//Depricated functions
+//These are here to make old code still work. Use the newer functions
+void FlyingJalapeno::PCA_enable(boolean enable)
+{
+  if(enable) enablePCA();
+  else disablePCA();
+}
+
+void FlyingJalapeno::setV1(boolean power_on, float voltage)
+{
+  if(power_on) enableRegulator1();
+  else disableRegulator1();
+  
+  setRegulatorVoltage1(voltage);
+}
+
+void FlyingJalapeno::setV2(boolean power_on, float voltage)
+{
+  if(power_on) enableRegulator2();
+  else disableRegulator2();
+  
+  setRegulatorVoltage2(voltage);
 }
