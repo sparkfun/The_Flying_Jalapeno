@@ -10,16 +10,18 @@ FlyingJalapeno FJ(ERROR_LED); //Blink error msgs on pin 13
 CapacitiveSensor cs_1 = CapacitiveSensor(47, 45);
 CapacitiveSensor cs_2 = CapacitiveSensor(31, 46);
 
-int failures = 0;
-boolean targetPower = false;
-long total1 = 0;
-long total2 = 0;
+int failures = 0; //Number of failures by the main test routine
+
+boolean targetPowered = false; //Keeps track of whether power supplies are energized
+
+long preTestButton = 0; //Cap sense values for two main test buttons
+long testButton = 0;
 
 void setup()
 {
   pinMode(ERROR_LED, OUTPUT);
 
-  FJ.PCA_enable(true);
+  FJ.enablePCA(); //Enable the I2C buffer
 
   Serial.begin(9600);
   Serial.println("Testbed\n\r");
@@ -29,18 +31,22 @@ void setup()
 
 void loop()
 {
-  total1 = cs_1.capacitiveSensor(30);
-  total2 = cs_2.capacitiveSensor(30);
+  preTestButton = cs_1.capacitiveSensor(30);
+  testButton = cs_2.capacitiveSensor(30);
 
   //Serial.print(total1);
   //Serial.print("\t");
   //Serial.println(total2);
 
-  if (total1 > 5000)
+  //Is user pressing Pre-Test button?
+  if (preTestButton > 5000)
   {
     FJ.dot();
 
-    if (target_power) power_down();
+    if (targetPowered == true) 
+    {
+      power_down(); //Power down the test jig
+    }
     else
     {
       //Check both power supplies for shorts to ground
@@ -49,13 +55,13 @@ void loop()
         //FJ.setV2(true, 4.2); // charge led off
         //delay(2000);
 
-        FJ.setV1(true, 5); //Turn on power supply
+        FJ.setV1(true, 5); //Turn on power supply 1 to 5.0V
         
         delay(500);
 
         Serial.println("Pre-test PASS, powering up...\n\r");
 
-        target_power = true;
+        targetPowered = true;
 
         digitalWrite(LED_PT_PASS, HIGH);
         digitalWrite(LED_PT_FAIL, LOW);
@@ -67,24 +73,28 @@ void loop()
         //Power supply test failed
         failures++;
 
-        FJ.setV1(false, 5);
+        FJ.setV1(false, 5); //Turn off power supply 1
         
         Serial.println("Jumper on Power Rail V1\n\r");
         
-        target_power = false;
+        targetPowered = false;
         
         digitalWrite(LED_PT_FAIL, HIGH);
         digitalWrite(LED_PT_PASS, LOW);
+
         delay(500); // debounce touching
       }
     }
   }
-  else if ((total2 > 5000) && (target_power))
+  else if (testButton > 5000 && targetPowered == true)
   {
     FJ.dot();
+
     failures = 0; // reset for testing a second time
+
     digitalWrite(LED_PASS, LOW);
     digitalWrite(LED_FAIL, LOW);
+
     //test_33V();
     if (failures == 0) test();
     if (failures == 0)
@@ -122,14 +132,20 @@ void test_33V()
 void power_down()
 {
   Serial.println("powering down target");
-  FJ.setV1(false, 5); // if power is already on, then just turn it off.
-  FJ.setV2(false, 4.2); // charge fakeout off
-  target_power = false;
+
+  FJ.setV1(false, 5); //Turn off power supply 1, but leave voltage selection at 5V
+  FJ.setV2(false, 4.2); //Turn off power supply 1, but leave voltage selection at 4.2V
+
+  targetPowered = false;
+
+  //Turn off all LEDs
   digitalWrite(LED_PT_PASS, LOW);
   digitalWrite(LED_PT_FAIL, LOW);
   digitalWrite(LED_PASS, LOW);
   digitalWrite(LED_FAIL, LOW);
+
   failures = 0;
+
   delay(500); // debounce touching
 }
 
