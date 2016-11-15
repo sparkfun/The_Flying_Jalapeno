@@ -29,16 +29,22 @@
 #define PSU1_POWER_CONTROL 48
 #define PSU2_POWER_CONTROL 49
 
+//Setting this pin high puts a small voltage between two resistors on VCC and Ground
+//If the ADC value is too low or too high you know there's a short somewhere on target board
+#define POWER_TEST_CONTROL 44
+
 class FlyingJalapeno
 {
   public:
     FlyingJalapeno(int statLED);
 
 	//Returns true if pin voltage is within a given window of the value we are looking for
-	boolean verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug); 
+	boolean verifyVoltage(int pin, float expectedVoltage, int allowedPercent = 10, boolean debug = false); 
 	
 	boolean verify_value(int input_value, int correct_val, float allowance_percent);
 
+	boolean testRegulator1(); //Test regulator 1 for shorts. True if short detected.
+	boolean testRegulator2(); //Test regulator 2 for shorts. True if short detected.
 	boolean powerTest(byte select);
 
 	void setRegulatorVoltage1(float voltage); //Set board voltage 1 (5 or 3.3V)
@@ -57,6 +63,7 @@ class FlyingJalapeno
     void dash();
 	
 	//Depricated, don't use. These are here to allow old code to compile
+	boolean verify_voltage(int input_value, int correct_val, float allowance_percent, boolean debug);
 	boolean PT(byte select);
 	void setV1(boolean power_on, float voltage);
 	void setV2(boolean power_on, float voltage);

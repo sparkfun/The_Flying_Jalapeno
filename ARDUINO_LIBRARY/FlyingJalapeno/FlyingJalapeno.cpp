@@ -42,44 +42,69 @@ void FlyingJalapeno::dash()
   delay(250);
 }
 
-// Test target board for shorts to GND, returns true if all is good, returns false if there is short detected
+
+//Test power circuit 1 to see if there is a short on the target
+//Returns true if all is ok
+//Returns false if there is a short
+boolean FlyingJalapeno::testRegulator1() 
+{
+  return(powerTest(1));
+}
+
+boolean FlyingJalapeno::testRegulator2() 
+{
+  return(powerTest(2));
+}
+
+//Test target board for shorts to GND
+//Returns true if all is good, returns false if there is short detected
 boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2" for using either pretest resistors on the FJ
 {
-  byte control_pin = 44;
+  //Power down regulators
+  disableRegulator1();
+  disableRegulator2();
+  
+  //Setup control pin
+  pinMode(POWER_TEST_CONTROL, OUTPUT);
+  digitalWrite(POWER_TEST_CONTROL, HIGH);
 
   byte read_pin;
   if (select == 1) read_pin = A14;
   else if (select == 2) read_pin = A15;
 
-  pinMode(control_pin, OUTPUT);
   pinMode(read_pin, INPUT);
 
-  digitalWrite(control_pin, HIGH);
-
-  delay(200);
+  delay(200); //Wait for voltage to settle before taking a ADC reading
 
   int reading = analogRead(read_pin);
 
-  Serial.print("Power test reading (should be ?): ");
+  Serial.print("Power test reading (should >500 or <471): ");
   Serial.println(reading);
 
-  digitalWrite(control_pin, LOW);
-  pinMode(control_pin, INPUT);
+  //Release the control pin
+  digitalWrite(POWER_TEST_CONTROL, LOW);
+  pinMode(POWER_TEST_CONTROL, INPUT);
 
   int jumper_val = 486;
 
-  if ((reading < (jumper_val * 1.03)) || (reading > (jumper_val * 0.97))) return false; // jumper detected!!
-  else return true;
+  if ((reading < (jumper_val * 1.03)) && (reading > (jumper_val * 0.97))) 
+	return false; // jumper detected!!
+  else 
+	return true;
 }
 
 //Test a pin to see what voltage is on the pin.
 //Returns true if pin voltage is within a given window of the value we are looking for
 //pin = pin to test
-//correct_val = what we expect. If 
-//allowance_percent = allowed window for overage. 0.1 = 10%
-//debug = print debug statements
-boolean FlyingJalapeno::verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug)
+//expectedVoltage = voltage we expect. 0.0 to 5.0 (float)
+//allowedPpercent = allowed window for overage. 0 to 100 (int) (default 10%)
+//debug = print debug statements (default false)
+boolean FlyingJalapeno::verifyVoltage(int pin, float expectedVoltage, int allowedPercent, boolean debug)
 {
+  int expectedValue = map(expectedVoltage, 0.0, 5.0, 0, 1023); //Scale float to an ADC value
+
+  float allowanceFraction = map(allowedPercent, 0, 100, 0.0, 1.0); //Scale the allowedPercent to a float
+
   int reading = analogRead(pin);
 
   if (debug)
@@ -88,7 +113,7 @@ boolean FlyingJalapeno::verify_voltage(int pin, float correct_val, float allowan
     Serial.println(reading);
   }
   
-  if ((reading <= (correct_val * (1 + allowance_percent))) && (reading >= (correct_val * (1 - allowance_percent)))) 
+  if ((reading <= (expectedValue * (1 + allowanceFraction))) && (reading >= (expectedValue * (1 - allowanceFraction)))) 
 	return true; // good value
   else 
 	return false;
@@ -234,4 +259,15 @@ void FlyingJalapeno::setV2(boolean power_on, float voltage)
 boolean FlyingJalapeno::PT(byte select) // select is for either "1" or "2" for using either pretest resistors on the FJ
 {
   powerTest(select);
+}
+
+boolean FlyingJalapeno::verify_voltage(int pin, int correct_val, float allowance_percent, boolean debug)
+{
+  int scaledPercent = allowance_percent * 100; //verifyVoltage expects an int. Scale 0.1 to 10.
+  
+  float scaledVoltage = (correct_val, 0, 1023, 0.0, 5.0); //Scale voltage to a float.
+  
+  boolean result = verifyVoltage(pin, scaledVoltage, scaledPercent, debug);
+  
+  return(result);
 }

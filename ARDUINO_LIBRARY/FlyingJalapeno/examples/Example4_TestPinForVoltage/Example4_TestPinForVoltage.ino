@@ -1,14 +1,8 @@
 /*
-  This example shows how to test if there are VCC to GND shorts on the target board.
+  This example shows how to test a pin for a specific voltage.
 
-  To do this we push a small current across a 10/100 resistor divider and look at the ADC value.
-  If ADC value is near 486 then there is a jumper.
-  If ADC value is far from 486, there is no jumper on the target board.
-  See FJ schematic 'Pre-Test' area to see the resistor and ADC setup.
-
-  Test for shorts on the two power supplies
-  testRegulator1()
-  testRegulator2()
+  Here's the function:
+  verifyVoltage(pin to test, expected voltage (float), percent of variance allowed (default 10 = 10%), print debug true/(default)false)
 
   Pete Lewis, started on 11/3/2016
   Contributions by NES November 15th, 2016
@@ -51,6 +45,17 @@ void setup()
 
 void loop()
 {
+  boolean result1 = FJ.verifyVoltage(A1, 3.3); //Test to see if pin A1 is at 3.3V
+  
+  if(result1 == true)
+  {
+    Serial.println("Pin is at 3.3V!");
+  }
+  else
+  {
+    Serial.println("Pin is NOT at 3.3V!");
+  }
 
+  delay(1000);  
 }
 
