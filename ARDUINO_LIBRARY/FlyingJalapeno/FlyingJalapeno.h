@@ -14,9 +14,9 @@
 class FlyingJalapeno
 {
   public:
-    FlyingJalapeno(int pin);
+    FlyingJalapeno(int statLED);
 
-	boolean verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug);
+	boolean verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug); //Returns true if pin voltage is within a given window of the value we are looking for
 	boolean verify_value(int input_value, int correct_val, float allowance_percent);
 
 	boolean powerTest(byte select);
@@ -30,7 +30,7 @@ class FlyingJalapeno
     void dot();
     void dash();
   private:
-    int _pin;
+    int _statLED;
 };
 
 #endif

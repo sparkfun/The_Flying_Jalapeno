@@ -1,10 +1,10 @@
 // Pete Lewis, started on 11/3/2016
 // Example code for a testbed using the Flying Jalapeno (mega2560 based dev board)
 
-#define ERROR_LED 13
+#define STATUS_LED 13
 
 #include <FlyingJalapeno.h>
-FlyingJalapeno FJ(ERROR_LED); //Blink error msgs on pin 13
+FlyingJalapeno FJ(STATUS_LED); //Blink status msgs on pin 13
 
 #include <CapacitiveSensor.h>
 CapacitiveSensor cs_1 = CapacitiveSensor(47, 45);
@@ -19,7 +19,7 @@ long testButton = 0;
 
 void setup()
 {
-  pinMode(ERROR_LED, OUTPUT);
+  pinMode(STATUS_LED, OUTPUT);
 
   FJ.enablePCA(); //Enable the I2C buffer
 
@@ -34,14 +34,14 @@ void loop()
   preTestButton = cs_1.capacitiveSensor(30);
   testButton = cs_2.capacitiveSensor(30);
 
-  //Serial.print(total1);
+  //Serial.print(preTestButton);
   //Serial.print("\t");
-  //Serial.println(total2);
+  //Serial.println(testButton);
 
-  //Is user pressing Pre-Test button?
+  //Is user pressing PreTest button?
   if (preTestButton > 5000)
   {
-    FJ.dot();
+    FJ.dot(); //Blink status LED to indicate button press
 
     if (targetPowered == true) 
     {
@@ -88,6 +88,8 @@ void loop()
   }
   else if (testButton > 5000 && targetPowered == true)
   {
+    //Begin main test
+    
     FJ.dot();
 
     failures = 0; // reset for testing a second time
@@ -96,7 +98,8 @@ void loop()
     digitalWrite(LED_FAIL, LOW);
 
     //test_33V();
-    if (failures == 0) test();
+    test(); //Run main test code
+
     if (failures == 0)
     {
       digitalWrite(LED_PASS, HIGH);
@@ -119,9 +122,15 @@ void test()
 void test_33V()
 {
   Serial.println("testing 3.3V output on board");
-  boolean result;
-  result = FJ.verify_voltage(A2, 516, 0.1, true); // 3.3V split by two 10Ks, reads 516 on my 3.3V logic FJ (using a proto known good).
-  if (result == true) Serial.println("test success!");
+
+  //pin = pin to test
+  //correct_val = what we expect.
+  //allowance_percent = allowed window for overage. 0.1 = 10%
+  //debug = print debug statements
+  boolean result = FJ.verify_voltage(A2, 516, 0.1, true); // 3.3V split by two 10Ks, reads 516 on my 3.3V logic FJ (using a proto known good).
+
+  if (result == true) 
+    Serial.println("test success!");
   else
   {
     Serial.println("test failure (should read near 516)");

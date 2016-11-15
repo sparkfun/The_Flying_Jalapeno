@@ -7,10 +7,13 @@
 #include "Arduino.h"
 #include "FlyingJalapeno.h"
 
-FlyingJalapeno::FlyingJalapeno(int pin)
+//Given a pin
+FlyingJalapeno::FlyingJalapeno(int statLED)
 {
-  pinMode(pin, OUTPUT);
-  _pin = pin;
+  _statLED = statLED;
+
+  pinMode(_statLED, OUTPUT);
+
   pinMode(LED_PT_PASS, OUTPUT);
   pinMode(LED_PT_FAIL, OUTPUT);
   pinMode(LED_PASS, OUTPUT);
@@ -20,17 +23,17 @@ FlyingJalapeno::FlyingJalapeno(int pin)
 
 void FlyingJalapeno::dot()
 {
-  digitalWrite(_pin, HIGH);
+  digitalWrite(_statLED, HIGH);
   delay(250);
-  digitalWrite(_pin, LOW);
+  digitalWrite(_statLED, LOW);
   delay(250);
 }
 
 void FlyingJalapeno::dash()
 {
-  digitalWrite(_pin, HIGH);
+  digitalWrite(_statLED, HIGH);
   delay(1000);
-  digitalWrite(_pin, LOW);
+  digitalWrite(_statLED, LOW);
   delay(250);
 }
 
@@ -62,15 +65,26 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
   else return true;
 }
 
+//Test a pin to see what voltage is on the pin.
+//Returns true if pin voltage is within a given window of the value we are looking for
+//pin = pin to test
+//correct_val = what we expect. If 
+//allowance_percent = allowed window for overage. 0.1 = 10%
+//debug = print debug statements
 boolean FlyingJalapeno::verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug)
 {
   int reading = analogRead(pin);
-  if (debug) {
+
+  if (debug)
+  {
     Serial.print("Reading:");
     Serial.println(reading);
   }
-  if ((reading <= (correct_val * (1 + allowance_percent))) && (reading >= (correct_val * (1 - allowance_percent)))) return true; // good value
-  else return false;
+  
+  if ((reading <= (correct_val * (1 + allowance_percent))) && (reading >= (correct_val * (1 - allowance_percent)))) 
+	return true; // good value
+  else 
+	return false;
 }
 
 boolean FlyingJalapeno::verify_value(int input_value, int correct_val, float allowance_percent)
