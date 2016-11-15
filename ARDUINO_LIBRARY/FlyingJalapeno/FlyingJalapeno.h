@@ -8,6 +8,8 @@
 //Setting these pins high turn on a given LED
 #define LED_PT_PASS 43 //PT = Pre-test
 #define LED_PT_FAIL 42 
+#define LED_PRETEST_PASS 43
+#define LED_PRETEST_FAIL 42 
 #define LED_PASS 41
 #define LED_FAIL 40
 
@@ -55,6 +57,7 @@ class FlyingJalapeno
     void dash();
 	
 	//Depricated, don't use. These are here to allow old code to compile
+	boolean PT(byte select);
 	void setV1(boolean power_on, float voltage);
 	void setV2(boolean power_on, float voltage);
 	void PCA_enable(boolean enable);

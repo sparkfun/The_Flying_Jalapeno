@@ -42,7 +42,7 @@ void FlyingJalapeno::dash()
   delay(250);
 }
 
-// PRE-TEST for shorts to GND on power rails, returns true if all is good, returns false if there is short detected
+// Test target board for shorts to GND, returns true if all is good, returns false if there is short detected
 boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2" for using either pretest resistors on the FJ
 {
   byte control_pin = 44;
@@ -55,10 +55,12 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
   pinMode(read_pin, INPUT);
 
   digitalWrite(control_pin, HIGH);
+
   delay(200);
+
   int reading = analogRead(read_pin);
 
-  Serial.print("Jumper test reading:");
+  Serial.print("Power test reading (should be ?): ");
   Serial.println(reading);
 
   digitalWrite(control_pin, LOW);
@@ -66,7 +68,7 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
 
   int jumper_val = 486;
 
-  if ((reading < (jumper_val * 1.03)) && (reading > (jumper_val * 0.97))) return false; // jumper detected!!
+  if ((reading < (jumper_val * 1.03)) || (reading > (jumper_val * 0.97))) return false; // jumper detected!!
   else return true;
 }
 
@@ -211,6 +213,7 @@ void FlyingJalapeno::PCA_enable(boolean enable)
   else disablePCA();
 }
 
+//Replaced by setRegulatorVoltage1() and enableRegulator1()
 void FlyingJalapeno::setV1(boolean power_on, float voltage)
 {
   if(power_on) enableRegulator1();
@@ -225,4 +228,10 @@ void FlyingJalapeno::setV2(boolean power_on, float voltage)
   else disableRegulator2();
   
   setRegulatorVoltage2(voltage);
+}
+
+//Power test. Replaced by powerTest
+boolean FlyingJalapeno::PT(byte select) // select is for either "1" or "2" for using either pretest resistors on the FJ
+{
+  powerTest(select);
 }

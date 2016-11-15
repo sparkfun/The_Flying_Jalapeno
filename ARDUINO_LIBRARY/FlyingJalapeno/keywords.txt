@@ -3,6 +3,18 @@ dash	KEYWORD2
 dot	KEYWORD2
 verify_voltage	KEYWORD2
 PT	KEYWORD2
+
+setRegulatorVoltage1	KEYWORD2
+setRegulatorVoltage2	KEYWORD2
+
+enableRegulator1	KEYWORD2
+disableRegulator1	KEYWORD2
+enableRegulator2	KEYWORD2
+disableRegulator2	KEYWORD2
+
+enablePCA	KEYWORD2
+disablePCA	KEYWORD2
+
 setV1	KEYWORD2
 setV2	KEYWORD2
 PCA_enable	KEYWORD2
