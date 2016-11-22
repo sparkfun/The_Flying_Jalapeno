@@ -20,6 +20,7 @@ class FlyingJalapeno
 	boolean verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug);
 	boolean verify_value(int input_value, int correct_val, float allowance_percent);
 	boolean PT(byte select);
+	boolean FlyingJalapeno::PreTest_Custom(byte control_pin, byte read_pin);
 	void setV1(boolean on, float voltage);
 	void setV2(boolean on, float voltage);
 	void PCA_enable(boolean enable);

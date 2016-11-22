@@ -63,6 +63,28 @@ boolean FlyingJalapeno::PT(byte select) // select is for either "1" or "2" for u
 	else return true;
 }
 
+// GENERIC PRE-TEST for shorts to GND on power rails, returns true if all is good, returns false if there is short detected
+boolean FlyingJalapeno::PreTest_Custom(byte control_pin, byte read_pin) // select is for either "1" or "2" for using either pretest resistors on the FJ
+{
+	pinMode(control_pin, OUTPUT);
+	pinMode(read_pin, INPUT);
+	
+	digitalWrite(control_pin, HIGH);
+	delay(200);
+	int reading = analogRead(read_pin);
+	
+	Serial.print("Jumper test reading:");
+	Serial.println(reading);
+	
+	digitalWrite(control_pin, LOW);
+	pinMode(control_pin, INPUT);
+	
+	int jumper_val = 486;
+	
+	if((reading < (jumper_val*1.03)) && (reading > (jumper_val*0.97))) return false; // jumper detected!!
+	else return true;
+}
+
 boolean FlyingJalapeno::verify_voltage(int pin, float correct_val, float allowance_percent, boolean debug)
 {
 	int reading = analogRead(pin);
