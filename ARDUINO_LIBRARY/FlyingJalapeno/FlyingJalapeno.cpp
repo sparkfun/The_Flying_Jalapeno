@@ -7,7 +7,7 @@
 #include "Arduino.h"
 #include "FlyingJalapeno.h"
 
-//Given a pin
+//Given a pin, use that pin to blink error messages
 FlyingJalapeno::FlyingJalapeno(int statLED)
 {
   _statLED = statLED;
@@ -71,6 +71,11 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
   byte read_pin;
   if (select == 1) read_pin = A14;
   else if (select == 2) read_pin = A15;
+  else
+  {
+	Serial.println("Error: powerTest requires pin select.");
+	return(false);
+  }
 
   pinMode(read_pin, INPUT);
 
@@ -78,8 +83,8 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
 
   int reading = analogRead(read_pin);
 
-  Serial.print("Power test reading (should >500 or <471): ");
-  Serial.println(reading);
+  //Serial.print("Power test reading (should >500 or <471): ");
+  //Serial.println(reading);
 
   //Release the control pin
   digitalWrite(POWER_TEST_CONTROL, LOW);
@@ -101,19 +106,30 @@ boolean FlyingJalapeno::powerTest(byte select) // select is for either "1" or "2
 //debug = print debug statements (default false)
 boolean FlyingJalapeno::verifyVoltage(int pin, float expectedVoltage, int allowedPercent, boolean debug)
 {
-  int expectedValue = map(expectedVoltage, 0.0, 5.0, 0, 1023); //Scale float to an ADC value
-
-  float allowanceFraction = map(allowedPercent, 0, 100, 0.0, 1.0); //Scale the allowedPercent to a float
+  //float allowanceFraction = map(allowedPercent, 0, 100, 0, 1.0); //Scale int to a fraction of 1.0
+  //Grrrr! map doesn't work with floats at all
+  
+  float allowanceFraction = allowedPercent / 100.0; //Scale the allowedPercent to a float
 
   int reading = analogRead(pin);
 
+  //Convert reading to voltage
+  float readVoltage = 5.0 / 1024 * reading;
+
   if (debug)
   {
-    Serial.print("Reading:");
+    Serial.print("allowanceFraction: ");
+    Serial.println(allowanceFraction);
+
+    Serial.print("Reading: ");
     Serial.println(reading);
+
+    Serial.print("Voltage: ");
+    Serial.println(readVoltage);
   }
   
-  if ((reading <= (expectedValue * (1 + allowanceFraction))) && (reading >= (expectedValue * (1 - allowanceFraction)))) 
+  
+  if ((readVoltage <= (expectedVoltage * (1.0 + allowanceFraction))) && (readVoltage >= (expectedVoltage * (1.0 - allowanceFraction)))) 
 	return true; // good value
   else 
 	return false;
@@ -148,6 +164,7 @@ void FlyingJalapeno::disableRegulator2(void)
 }
 
 //Setup the first power supply to the chosen voltage level
+//Leaves MOSFET off so regulator is configured but not connected to target
 void FlyingJalapeno::setRegulatorVoltage1(float voltage)
 {
   digitalWrite(PSU1_VOLTAGE_CONTROL_TO_3V3, LOW);
@@ -173,6 +190,7 @@ void FlyingJalapeno::setRegulatorVoltage1(float voltage)
 }
 
 //Setup the second power supply to the chosen voltage level
+//Leaves MOSFET off so regulator is configured but not connected to target
 void FlyingJalapeno::setRegulatorVoltage2(float voltage)
 {
   digitalWrite(PSU2_VOLTAGE_CONTROL_TO_3V3, LOW);
