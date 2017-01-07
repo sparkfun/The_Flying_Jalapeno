@@ -45,8 +45,8 @@ void setup()
   }
 
   //Now power up the target
-  FJ.enableRegulator1();
-  FJ.enableRegulator2();
+  //FJ.enableRegulator1();
+  //FJ.enableRegulator2();
 }
 
 void loop()

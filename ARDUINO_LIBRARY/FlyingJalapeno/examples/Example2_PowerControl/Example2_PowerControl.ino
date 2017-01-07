@@ -56,7 +56,7 @@ void loop()
   }
   else if (testButton > 5000)
   {
-    Serial.println("You powering up regulator 2!");
+    Serial.println("Powering up regulator 2!");
     
     FJ.disableRegulator1(); //Turn off the 1st regulator
     FJ.enableRegulator2(); //Turn on regulator

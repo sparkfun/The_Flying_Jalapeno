@@ -45,9 +45,21 @@ void setup()
 
 void loop()
 {
-  boolean result1 = FJ.verifyVoltage(A1, 3.3); //Test to see if pin A1 is at 3.3V
+  boolean result1 = FJ.verifyVoltage(A6, 3.3); //Test to see if pin A6 is at 3.3V
   
   if(result1 == true)
+  {
+    Serial.println("Pin is at 3.3V!");
+  }
+  else
+  {
+    Serial.println("Pin is NOT at 3.3V!");
+  }
+
+  //This demonstrates the extended call to the function
+  boolean result2 = FJ.verifyVoltage(A6, 3.3, 10, true); //A6, 3.3V, within 10%, and print debug statements
+  
+  if(result2 == true)
   {
     Serial.println("Pin is at 3.3V!");
   }
