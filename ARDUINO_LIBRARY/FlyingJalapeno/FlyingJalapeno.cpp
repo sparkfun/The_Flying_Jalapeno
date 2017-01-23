@@ -279,11 +279,12 @@ boolean FlyingJalapeno::PT(byte select) // select is for either "1" or "2" for u
   powerTest(select);
 }
 
+//Maintained for reverse compatibility. Use verifyVoltage instead
 boolean FlyingJalapeno::verify_voltage(int pin, int correct_val, float allowance_percent, boolean debug)
 {
   int scaledPercent = allowance_percent * 100; //verifyVoltage expects an int. Scale 0.1 to 10.
   
-  float scaledVoltage = (correct_val, 0, 1023, 0.0, 5.0); //Scale voltage to a float.
+  float scaledVoltage = 5.0 / 1024 * correct_val; //Scale voltage to a float.
   
   boolean result = verifyVoltage(pin, scaledVoltage, scaledPercent, debug);
   
