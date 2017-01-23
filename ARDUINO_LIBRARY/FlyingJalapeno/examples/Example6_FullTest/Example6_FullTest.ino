@@ -1,6 +1,11 @@
-// Pete Lewis, started on 11/3/2016
-// Example code for a testbed using the Flying Jalapeno (mega2560 based dev board)
+/*
+  This example shows how to run a normal test procedure
 
+  Pete Lewis, started on 11/3/2016
+  Contributions by NES November 15th, 2016
+
+  Select Mega2560 from the boards list
+*/
 #define STATUS_LED 13
 
 #include <FlyingJalapeno.h>
@@ -25,8 +30,6 @@ void setup()
 
   Serial.begin(9600);
   Serial.println("Testbed\n\r");
-
-  //FJ.setV2(true, 4.2); // charge led off
 }
 
 void loop()
