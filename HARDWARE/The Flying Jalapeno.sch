@@ -26213,7 +26213,7 @@ bracket</text>
 <wire x1="187.96" y1="86.36" x2="187.96" y2="0" width="0.2032" layer="97" style="shortdash"/>
 <text x="127" y="271.78" size="3.81" layer="97">MICRO</text>
 <text x="354.33" y="11.43" size="2.54" layer="94">Pete Lewis</text>
-<text x="422.402" y="7.62" size="2.54" layer="94">v10</text>
+<text x="422.402" y="7.62" size="2.54" layer="94">v11</text>
 <text x="185.42" y="96.52" size="1.778" layer="97">ATMEGA2560V</text>
 <text x="337.82" y="264.16" size="3.81" layer="97">2x30 RA connector to testbeds</text>
 <text x="5.08" y="241.3" size="1.27" layer="97">INPUT VOLTAGE 7-16V
