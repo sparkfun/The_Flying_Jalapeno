@@ -27300,7 +27300,7 @@ Varies depending on testbed</text>
 <wire x1="20.32" y1="261.62" x2="17.78" y2="261.62" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="48/PWR_CTRL1" class="0">
+<net name="48/PWR_CTRL_1" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="175.26" x2="66.04" y2="175.26" width="0.1524" layer="91"/>
@@ -27312,7 +27312,7 @@ Varies depending on testbed</text>
 <label x="177.8" y="172.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="49/PWR_CTRL2" class="0">
+<net name="49/PWR_CTRL_2" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
 <wire x1="66.04" y1="111.76" x2="63.5" y2="111.76" width="0.1524" layer="91"/>

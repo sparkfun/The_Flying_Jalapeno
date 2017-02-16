@@ -4421,7 +4421,7 @@ design rules under a new name.</description>
 <wire x1="40.132" y1="12.319" x2="36.8554" y2="15.5956" width="0.3048" layer="1"/>
 <wire x1="26.1992" y1="15.5956" x2="36.8554" y2="15.5956" width="0.3048" layer="1"/>
 </signal>
-<signal name="48/PWR_CTRL1">
+<signal name="48/PWR_CTRL_1">
 <contactref element="U1" pad="36"/>
 <contactref element="R11" pad="1"/>
 <wire x1="56.12171875" y1="27.5540625" x2="53.19578125" y2="30.48" width="0.2794" layer="1"/>
@@ -4444,7 +4444,7 @@ design rules under a new name.</description>
 <wire x1="23.2156" y1="39.7002" x2="23.2156" y2="40.9448" width="0.3048" layer="16"/>
 <wire x1="23.9522" y1="40.9448" x2="28.2702" y2="36.6268" width="0.3048" layer="1"/>
 </signal>
-<signal name="49/PWR_CTRL2">
+<signal name="49/PWR_CTRL_2">
 <contactref element="U1" pad="35"/>
 <contactref element="R14" pad="1"/>
 <wire x1="55.768165625" y1="27.200509375" x2="53.758675" y2="29.21" width="0.2794" layer="1"/>
