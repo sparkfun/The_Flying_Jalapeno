@@ -25481,7 +25481,7 @@ NOT compatible with all available part number pinout schemes- DOUBLE CHECK!!!</d
 </library>
 <library name="Testing">
 <packages>
-<package name="FLYING_JALAPENO_V2_F">
+<package name="FLYING_JALAPENO_V3_F">
 <circle x="33.655" y="3.81" radius="2.794" width="0.127" layer="39"/>
 <circle x="-33.655" y="3.81" radius="2.794" width="0.127" layer="39"/>
 <circle x="-33.655" y="-3.81" radius="1.524" width="0.0254" layer="49"/>
@@ -25636,8 +25636,8 @@ NOT compatible with all available part number pinout schemes- DOUBLE CHECK!!!</d
 bracket</text>
 <text x="-1.1" y="3.43" size="0.6096" layer="25" font="vector" ratio="18">&gt;NAME</text>
 <text x="-1.35" y="2.33" size="0.6096" layer="27" font="vector" ratio="18">&gt;VALUE</text>
-<hole x="33.655" y="3.81" drill="3.048"/>
-<hole x="-33.655" y="3.81" drill="3.048"/>
+<hole x="33.655" y="3.81" drill="2.794"/>
+<hole x="-33.655" y="3.81" drill="2.794"/>
 <rectangle x1="-28.44" y1="0.07" x2="-27.57" y2="6.16" layer="21"/>
 <text x="-23.53" y="2.57" size="1.27" layer="21" font="vector" ratio="15">Check Polarity line</text>
 <wire x1="-23.98" y1="3.08" x2="-27.19" y2="3.08" width="0.3048" layer="21"/>
@@ -25646,7 +25646,7 @@ bracket</text>
 <wire x1="-27.17" y1="3.04" x2="-26.59" y2="2.46" width="0.3048" layer="21"/>
 <rectangle x1="-30.8" y1="0.05" x2="-29.93" y2="6.14" layer="21"/>
 </package>
-<package name="FLYING_JALAPENO_V2_M">
+<package name="FLYING_JALAPENO_V3_M">
 <circle x="33.655" y="-3.4036" radius="2.794" width="0.127" layer="39"/>
 <circle x="-33.655" y="-3.4036" radius="2.794" width="0.127" layer="39"/>
 <circle x="-33.655" y="-3.81" radius="1.524" width="0.0254" layer="49"/>
@@ -25657,7 +25657,7 @@ bracket</text>
 <wire x1="10.05" y1="-4.46" x2="10.05" y2="-3.635" width="0.127" layer="21"/>
 <wire x1="-29.95" y1="-4.46" x2="-29.95" y2="-3.635" width="0.127" layer="21"/>
 <wire x1="30.05" y1="-4.46" x2="30.05" y2="-3.635" width="0.127" layer="21"/>
-<wire x1="-30" y1="0" x2="30" y2="0" width="0.127" layer="51"/>
+<wire x1="-45.72" y1="0" x2="45.72" y2="0" width="0.127" layer="51"/>
 <wire x1="0" y1="1" x2="0" y2="-1" width="0.127" layer="51"/>
 <wire x1="33.655" y1="-1.5494" x2="33.655" y2="-5.2578" width="0.2032" layer="41" curve="-180"/>
 <wire x1="33.655" y1="-5.2578" x2="33.655" y2="-1.5494" width="0.2032" layer="41" curve="-180"/>
@@ -25795,19 +25795,102 @@ bracket</text>
 <pad name="58" x="25" y="-3" drill="0.85" rot="R90"/>
 <pad name="59" x="27" y="-3" drill="0.85" rot="R90"/>
 <pad name="60" x="29" y="-2.9" drill="0.85" rot="R90"/>
-<text x="22.442" y="-1.016" size="0.8128" layer="51">PCB EDGE ^</text>
+<text x="37.682" y="-1.016" size="0.8128" layer="51">PCB EDGE ^</text>
 <text x="-35.941" y="-1.0922" size="0.8128" layer="49" font="vector" ratio="12">  FJ
 bracket</text>
 <text x="31.369" y="-1.0922" size="0.8128" layer="49" font="vector" ratio="12">  FJ
 bracket</text>
-<text x="-2.54" y="-7.62" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
-<hole x="33.655" y="-3.4036" drill="3.048"/>
-<hole x="-33.655" y="-3.4036" drill="3.048"/>
+<text x="-2.54" y="-10.16" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
+<hole x="33.655" y="-3.4036" drill="2.794"/>
+<hole x="-33.655" y="-3.4036" drill="2.794"/>
+<text x="24.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">CS2</text>
+<text x="-29.03" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">GND</text>
+<text x="-27.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">V1</text>
+<text x="-25.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">V2</text>
+<text x="-23.03" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">RAW</text>
+<text x="-20.981603125" y="-2.101134375" size="0.6096" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">FAIL</text>
+<text x="-18.3970125" y="-2.06574375" size="0.6096" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">PT</text>
+<text x="-19.26065625" y="-2.096975" size="0.6096" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">FAIL</text>
+<text x="-16.903" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A0</text>
+<text x="-15.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A2</text>
+<text x="-13.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A4</text>
+<text x="-11.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A6</text>
+<text x="-9.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A8</text>
+<text x="-7.03" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A10</text>
+<text x="-5.03" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">A12</text>
+<text x="-3.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D3</text>
+<text x="-1.03" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D5</text>
+<text x="0.97" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D7</text>
+<text x="2.97" y="-2.037" size="0.8128" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D9</text>
+<text x="4.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D11</text>
+<text x="6.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D13</text>
+<text x="8.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">Rx3</text>
+<text x="10.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">Rx2</text>
+<text x="12.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">Rx1</text>
+<text x="14.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">SCL</text>
+<text x="16.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D23</text>
+<text x="18.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D25</text>
+<text x="20.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D27</text>
+<text x="22.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D29</text>
+<text x="26.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D51</text>
+<text x="28.97" y="-2.037" size="0.7112" layer="22" font="vector" ratio="18" rot="MR90" align="center-left">D53</text>
+<text x="-29.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">GND</text>
+<text x="-27.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">V1</text>
+<text x="-25.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">V2</text>
+<text x="-23.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">RAW</text>
+<text x="-21.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">CS1</text>
+<text x="-19.017165625" y="-5.7673125" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">PASS</text>
+<text x="-15.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A1</text>
+<text x="-13.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A3</text>
+<text x="-11.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A5</text>
+<text x="-9.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A7</text>
+<text x="-7.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A9</text>
+<text x="-5.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">A11</text>
+<text x="-3.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D2</text>
+<text x="-1.03" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D4</text>
+<text x="0.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D6</text>
+<text x="2.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D8</text>
+<text x="4.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D10</text>
+<text x="6.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D12</text>
+<text x="8.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">Tx3</text>
+<text x="10.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">Tx2</text>
+<text x="12.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">Tx1</text>
+<text x="14.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">SDA</text>
+<text x="16.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D22</text>
+<text x="18.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D24</text>
+<text x="20.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D26</text>
+<text x="22.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D28</text>
+<text x="24.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D30</text>
+<text x="26.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D50</text>
+<text x="28.97" y="-5.784" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">D52</text>
+<text x="-17.377215625" y="-5.784528125" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">PASS</text>
+<text x="-16.425109375" y="-5.795403125" size="0.8128" layer="22" font="vector" ratio="18" rot="MR270" align="center-left">PT</text>
+<text x="-44.868" y="-1.016" size="0.8128" layer="51">PCB EDGE ^</text>
+<wire x1="-36.83" y1="69.85" x2="-36.83" y2="2.54" width="0.2032" layer="49"/>
+<wire x1="-36.83" y1="2.54" x2="-34.29" y2="0" width="0.2032" layer="49" curve="90"/>
+<wire x1="-34.29" y1="0" x2="34.29" y2="0" width="0.2032" layer="49"/>
+<wire x1="34.29" y1="0" x2="36.83" y2="2.54" width="0.2032" layer="49" curve="90"/>
+<wire x1="36.83" y1="2.54" x2="36.83" y2="69.85" width="0.2032" layer="49"/>
+<wire x1="36.83" y1="69.85" x2="34.29" y2="72.39" width="0.2032" layer="49" curve="90"/>
+<wire x1="34.29" y1="72.39" x2="-34.29" y2="72.39" width="0.2032" layer="49"/>
+<wire x1="-34.29" y1="72.39" x2="-36.83" y2="69.85" width="0.2032" layer="49" curve="90"/>
+<wire x1="-12.192" y1="69.977" x2="-12.192" y2="74.803" width="0.254" layer="49"/>
+<wire x1="-12.192" y1="74.803" x2="-20.828" y2="74.803" width="0.254" layer="49"/>
+<wire x1="-20.828" y1="74.803" x2="-20.828" y2="69.977" width="0.254" layer="49"/>
+<wire x1="13.97" y1="63.5" x2="13.97" y2="74.803" width="0.254" layer="49"/>
+<wire x1="13.97" y1="74.803" x2="29.337" y2="74.803" width="0.254" layer="49"/>
+<wire x1="29.337" y1="74.803" x2="29.337" y2="63.627" width="0.254" layer="49"/>
+<circle x="-33.02" y="68.58" radius="1.79605" width="0.254" layer="49"/>
+<circle x="33.02" y="68.58" radius="1.79605" width="0.254" layer="49"/>
+<circle x="-33.02" y="11.43" radius="1.79605" width="0.254" layer="49"/>
+<circle x="33.02" y="11.43" radius="1.79605" width="0.254" layer="49"/>
+<circle x="-33.655" y="3.81" radius="1.524" width="0.0254" layer="49"/>
+<circle x="33.655" y="3.81" radius="1.524" width="0.0254" layer="49"/>
 </package>
 </packages>
 <symbols>
-<symbol name="FLYING_JALAPENO_V2">
+<symbol name="FLYING_JALAPENO">
 <wire x1="-20.32" y1="-55.88" x2="20.32" y2="-55.88" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-55.88" x2="20.32" y2="53.34" width="0.254" layer="94"/>
 <wire x1="20.32" y1="53.34" x2="-20.32" y2="53.34" width="0.254" layer="94"/>
@@ -25845,12 +25928,12 @@ bracket</text>
 <pin name="41/PASS" x="25.4" y="-20.32" length="middle" rot="R180"/>
 <pin name="42/PT_FAIL" x="25.4" y="-22.86" length="middle" rot="R180"/>
 <pin name="43/PT_PASS" x="25.4" y="-25.4" length="middle" rot="R180"/>
-<pin name="50" x="25.4" y="-45.72" length="middle" rot="R180"/>
-<pin name="51" x="25.4" y="-48.26" length="middle" rot="R180"/>
-<pin name="52" x="25.4" y="-50.8" length="middle" rot="R180"/>
-<pin name="53" x="25.4" y="-53.34" length="middle" rot="R180"/>
-<pin name="A0(RX0)" x="-25.4" y="33.02" length="middle"/>
-<pin name="A1(TX0)" x="-25.4" y="30.48" length="middle"/>
+<pin name="50(MISO)" x="25.4" y="-45.72" length="middle" rot="R180"/>
+<pin name="51(MOSI)" x="25.4" y="-48.26" length="middle" rot="R180"/>
+<pin name="52(SCK)" x="25.4" y="-50.8" length="middle" rot="R180"/>
+<pin name="53(SS)" x="25.4" y="-53.34" length="middle" rot="R180"/>
+<pin name="A0" x="-25.4" y="33.02" length="middle"/>
+<pin name="A1" x="-25.4" y="30.48" length="middle"/>
 <pin name="A2" x="-25.4" y="27.94" length="middle"/>
 <pin name="A3" x="-25.4" y="25.4" length="middle"/>
 <pin name="A4" x="-25.4" y="22.86" length="middle"/>
@@ -25888,12 +25971,12 @@ bracket</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="FLYING_JALAPENO_V2">
+<deviceset name="FLYING_JALAPENO_V3">
 <gates>
-<gate name="G$1" symbol="FLYING_JALAPENO_V2" x="0" y="0"/>
+<gate name="G$1" symbol="FLYING_JALAPENO" x="0" y="0"/>
 </gates>
 <devices>
-<device name="FEMALE" package="FLYING_JALAPENO_V2_F">
+<device name="FEMALE" package="FLYING_JALAPENO_V3_F">
 <connects>
 <connect gate="G$1" pin="10" pad="18"/>
 <connect gate="G$1" pin="11" pad="48"/>
@@ -25924,16 +26007,16 @@ bracket</text>
 <connect gate="G$1" pin="42/PT_FAIL" pad="36"/>
 <connect gate="G$1" pin="43/PT_PASS" pad="7"/>
 <connect gate="G$1" pin="5" pad="45"/>
-<connect gate="G$1" pin="50" pad="29"/>
-<connect gate="G$1" pin="51" pad="59"/>
-<connect gate="G$1" pin="52" pad="30"/>
-<connect gate="G$1" pin="53" pad="60"/>
+<connect gate="G$1" pin="50(MISO)" pad="29"/>
+<connect gate="G$1" pin="51(MOSI)" pad="59"/>
+<connect gate="G$1" pin="52(SCK)" pad="30"/>
+<connect gate="G$1" pin="53(SS)" pad="60"/>
 <connect gate="G$1" pin="6" pad="16"/>
 <connect gate="G$1" pin="7" pad="46"/>
 <connect gate="G$1" pin="8" pad="17"/>
 <connect gate="G$1" pin="9" pad="47"/>
-<connect gate="G$1" pin="A0(RX0)" pad="37"/>
-<connect gate="G$1" pin="A1(TX0)" pad="8"/>
+<connect gate="G$1" pin="A0" pad="37"/>
+<connect gate="G$1" pin="A1" pad="8"/>
 <connect gate="G$1" pin="A10" pad="42"/>
 <connect gate="G$1" pin="A11" pad="13"/>
 <connect gate="G$1" pin="A12" pad="43"/>
@@ -25958,7 +26041,7 @@ bracket</text>
 </technology>
 </technologies>
 </device>
-<device name="MALE" package="FLYING_JALAPENO_V2_M">
+<device name="MALE" package="FLYING_JALAPENO_V3_M">
 <connects>
 <connect gate="G$1" pin="10" pad="18"/>
 <connect gate="G$1" pin="11" pad="48"/>
@@ -25989,16 +26072,16 @@ bracket</text>
 <connect gate="G$1" pin="42/PT_FAIL" pad="36"/>
 <connect gate="G$1" pin="43/PT_PASS" pad="7"/>
 <connect gate="G$1" pin="5" pad="45"/>
-<connect gate="G$1" pin="50" pad="29"/>
-<connect gate="G$1" pin="51" pad="59"/>
-<connect gate="G$1" pin="52" pad="30"/>
-<connect gate="G$1" pin="53" pad="60"/>
+<connect gate="G$1" pin="50(MISO)" pad="29"/>
+<connect gate="G$1" pin="51(MOSI)" pad="59"/>
+<connect gate="G$1" pin="52(SCK)" pad="30"/>
+<connect gate="G$1" pin="53(SS)" pad="60"/>
 <connect gate="G$1" pin="6" pad="16"/>
 <connect gate="G$1" pin="7" pad="46"/>
 <connect gate="G$1" pin="8" pad="17"/>
 <connect gate="G$1" pin="9" pad="47"/>
-<connect gate="G$1" pin="A0(RX0)" pad="37"/>
-<connect gate="G$1" pin="A1(TX0)" pad="8"/>
+<connect gate="G$1" pin="A0" pad="37"/>
+<connect gate="G$1" pin="A1" pad="8"/>
 <connect gate="G$1" pin="A10" pad="42"/>
 <connect gate="G$1" pin="A11" pad="13"/>
 <connect gate="G$1" pin="A12" pad="43"/>
@@ -26148,7 +26231,7 @@ bracket</text>
 <part name="JP2" library="SparkFun-Connectors" deviceset="FTDI_BASIC_DEVICE_SIDE" device="RA_SMT" value="FTDI"/>
 <part name="P+7" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
 <part name="P+9" library="SparkFun" deviceset="3.3V" device="" value="VCC"/>
-<part name="JP4" library="Testing" deviceset="FLYING_JALAPENO_V2" device="FEMALE" value="2x30 RA FEMALE HEADER"/>
+<part name="JP4" library="Testing" deviceset="FLYING_JALAPENO_V3" device="FEMALE" value="2x30 RA FEMALE HEADER"/>
 <part name="GND54" library="SparkFun" deviceset="GND" device=""/>
 <part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
 <part name="STANDOFF3" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device="TIGHT"/>
@@ -26974,7 +27057,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="345.44" y1="213.36" x2="342.9" y2="213.36" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="A1(TX0)"/>
+<pinref part="JP4" gate="G$1" pin="A1"/>
 <label x="342.9" y="213.36" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
@@ -26986,7 +27069,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="345.44" y1="215.9" x2="342.9" y2="215.9" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="A0(RX0)"/>
+<pinref part="JP4" gate="G$1" pin="A0"/>
 <label x="342.9" y="215.9" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
@@ -27892,7 +27975,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="396.24" y1="129.54" x2="398.78" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="53"/>
+<pinref part="JP4" gate="G$1" pin="53(SS)"/>
 <label x="398.78" y="129.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
@@ -27909,7 +27992,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="396.24" y1="132.08" x2="398.78" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="52"/>
+<pinref part="JP4" gate="G$1" pin="52(SCK)"/>
 <label x="398.78" y="132.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
@@ -27926,7 +28009,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="396.24" y1="134.62" x2="398.78" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="51"/>
+<pinref part="JP4" gate="G$1" pin="51(MOSI)"/>
 <label x="398.78" y="134.62" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
@@ -27943,7 +28026,7 @@ Varies depending on testbed</text>
 </segment>
 <segment>
 <wire x1="396.24" y1="137.16" x2="398.78" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="50"/>
+<pinref part="JP4" gate="G$1" pin="50(MISO)"/>
 <label x="398.78" y="137.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
